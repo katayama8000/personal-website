@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <header className="pb-10">
         <div className="h-[100px] w-[100px] rounded-full bg-green-600"></div>
         <div className="pt-10 text-3xl font-bold text-white">
-          tatsuhumi katayama
+          Tatsuhumi Katayama
         </div>
         <div className="pt-4 font-bold">
           I am a enginner based in Nagoya/japan.
