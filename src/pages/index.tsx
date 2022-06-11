@@ -1,34 +1,41 @@
 import type { NextPage } from "next";
-import { Button, useMediaQuery, useViewportSize } from "src/lib/mantine";
+import { Title } from "@component/layout/Title";
 
 const Home: NextPage = () => {
-  const { width } = useViewportSize();
-  const largerThanXs = useMediaQuery("xs");
-  const largerThanSm = useMediaQuery("sm");
-  const largerThanMd = useMediaQuery("md");
-  const largerThanLg = useMediaQuery("lg");
-  const largerThanXl = useMediaQuery("xl");
-
-  const handleClick = () => {
-    console.log("Hello!");
+  const handleWindowOpen = (url: string) => {
+    window.open(url);
   };
 
   return (
     <div className="p-20">
-      <div className="bg-fuchsia-200 xs:bg-red-200 sm:bg-amber-200 md:bg-lime-200 lg:bg-emerald-200 xl:bg-cyan-200">
-        <div>{`width: ${width}`}</div>
-        <div>{`largerThanXs: ${largerThanXs}`}</div>
-        <div>{`largerThanSm: ${largerThanSm}`}</div>
-        <div>{`largerThanMd: ${largerThanMd}`}</div>
-        <div>{`largerThanLg: ${largerThanLg}`}</div>
-        <div>{`largerThanXl: ${largerThanXl}`}</div>
+      <header className="pb-10">
+        <div className="h-[100px] w-[100px] rounded-full bg-green-600"></div>
+        <div className="pt-10 text-3xl font-bold text-white">
+          tatsuhumi katayama
+        </div>
+        <div className="pt-4 font-bold">I am a enginner based in japan.</div>
+      </header>
+      <hr className="py-10" />
+      <Title title="About" description="Brief introduction about me" />
+      <div
+        className="cursor-pointer"
+        onClick={() => handleWindowOpen("https://note.com/with_wife")}
+      >
+        <Title title="Note" description="anything blog" />
       </div>
-      <Button dent onClick={handleClick} className="mt-4 block">
-        Click me!
-      </Button>
-      <Button onClick={handleClick} className="mt-4 block">
-        Click me!
-      </Button>
+      <div
+        className="cursor-pointer"
+        onClick={() => handleWindowOpen("https://qiita.com/t_109609akg")}
+      >
+        <Title title="Qiita" description="Teck blog" />
+      </div>
+      <Title title="works" description="What I have build" />
+      <div
+        className="cursor-pointer"
+        onClick={() => handleWindowOpen("https://github.com/katayama8000")}
+      >
+        <Title title="git hub" description="I try to write code everyday" />
+      </div>
     </div>
   );
 };
