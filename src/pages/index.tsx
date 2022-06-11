@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import { Title } from "@component/layout/Title";
+import Link from "next/link";
+
+const handleWindowOpen = (url: string) => {
+  window.open(url);
+};
 
 const Home: NextPage = () => {
-  const handleWindowOpen = (url: string) => {
-    window.open(url);
-  };
-
   return (
     <div className="p-20">
       <header className="pb-10">
@@ -16,26 +17,40 @@ const Home: NextPage = () => {
         <div className="pt-4 font-bold">I am a enginner based in japan.</div>
       </header>
       <hr className="py-10" />
-      <Title title="About" description="Brief introduction about me" />
-      <div
-        className="cursor-pointer"
-        onClick={() => handleWindowOpen("https://note.com/with_wife")}
-      >
-        <Title title="Note" description="anything blog" />
-      </div>
-      <div
-        className="cursor-pointer"
-        onClick={() => handleWindowOpen("https://qiita.com/t_109609akg")}
-      >
-        <Title title="Qiita" description="Teck blog" />
-      </div>
-      <Title title="works" description="What I have build" />
-      <div
-        className="cursor-pointer"
-        onClick={() => handleWindowOpen("https://github.com/katayama8000")}
-      >
-        <Title title="git hub" description="I try to write code everyday" />
-      </div>
+      <Link href="about">
+        <a>
+          <Title title="About" description="Brief introduction about me" />
+        </a>
+      </Link>
+      <Title
+        title="Note"
+        description="anything blog"
+        handleWindowOpen={() => handleWindowOpen("https://note.com/with_wife")}
+      />
+      <Title
+        title="Qiita"
+        description="Teck blog"
+        handleWindowOpen={() =>
+          handleWindowOpen("https://qiita.com/t_109609akg")
+        }
+      />
+      <Link href="works">
+        <a>
+          <Title title="Works" description="What I have build" />
+        </a>
+      </Link>
+      <Title
+        title="Git hub"
+        description="I try to write code everyday"
+        handleWindowOpen={() =>
+          handleWindowOpen("https://github.com/katayama8000")
+        }
+      />
+      <Link href="contact">
+        <a>
+          <Title title="Contact" description="" />
+        </a>
+      </Link>
     </div>
   );
 };

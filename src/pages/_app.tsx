@@ -2,8 +2,10 @@ import "src/lib/tailwind.css";
 import type { AppProps } from "next/app";
 import { MantineProvider } from "@mantine/core";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -19,6 +21,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </MantineProvider>
       </main>
+
+      {router.pathname === "/" && (
+        <div>
+          <hr />
+          <div className="p-5 text-center">&copy;2022 katayama8000</div>
+        </div>
+      )}
     </>
   );
 }
