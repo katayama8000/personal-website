@@ -14,7 +14,9 @@ const Home: NextPage = () => {
         <div className="pt-10 text-3xl font-bold text-white">
           tatsuhumi katayama
         </div>
-        <div className="pt-4 font-bold">I am a enginner based in japan.</div>
+        <div className="pt-4 font-bold">
+          I am a enginner based in Nagoya/japan.
+        </div>
       </header>
       <hr className="py-10" />
       <Link href="about">
@@ -24,7 +26,7 @@ const Home: NextPage = () => {
       </Link>
       <Title
         title="Note"
-        description="anything blog"
+        description="Anything blog"
         handleWindowOpen={() => handleWindowOpen("https://note.com/with_wife")}
       />
       <Title
@@ -46,11 +48,23 @@ const Home: NextPage = () => {
           handleWindowOpen("https://github.com/katayama8000")
         }
       />
-      <Link href="contact">
-        <a>
-          <Title title="Contact" description="" />
-        </a>
-      </Link>
+      <Title
+        title="My Comunity"
+        description="I created a community on LINE"
+        handleWindowOpen={() =>
+          handleWindowOpen(
+            "https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+          )
+        }
+      />
+
+      <Title
+        title="Contact"
+        description="Contact me on Twitter"
+        handleWindowOpen={() =>
+          handleWindowOpen("https://twitter.com/uCrnP01w7Wp3atY")
+        }
+      />
     </div>
   );
 };
