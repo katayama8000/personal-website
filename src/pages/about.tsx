@@ -45,8 +45,7 @@ const about = () => {
         </a>
         . Now she is obsessed with investment.
         <br />
-        We have a common hobby and that are music and movie. They brought us
-        together.
+        We love music and movie. They brought us together.
       </div>
       <Grid grow>
         {images.map((url, index) => {
