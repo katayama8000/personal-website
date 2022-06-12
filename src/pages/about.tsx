@@ -28,7 +28,7 @@ const about = () => {
         <a className="text-5xl"> ← </a>
       </Link>
       <h1 className="py-10 text-3xl font-bold text-white">About</h1>
-      <div className="pb-5">I am a enginner based in Nagoya/japan.</div>
+      <div className="pb-5">I am a enginner based in Nagoya/Japan.</div>
       <div>
         I have 1 years of enginnering experience in Nogoya. Programming
         languages I used at work are C and JavaScript.
@@ -40,9 +40,14 @@ const about = () => {
         I got married two years ago. All I want is enjoying life with her.
         <br />
         This is her
-        <a href="https://twitter.com/nimanimoney" className="pl-1 underline">
+        <span
+          onClick={() => {
+            window.open("https://twitter.com/nimanimoney");
+          }}
+          className="cursor-pointer pl-1 underline"
+        >
           Twitter account
-        </a>
+        </span>
         . Now she is obsessed with investment.
         <br />
         We love music and movie. They brought us together.

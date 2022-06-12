@@ -1,13 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import Link from "next/link";
-import { Image } from "@mantine/core";
-import { Button } from "src/lib/mantine";
 import { App } from "@component/layout/App";
-
-const handleWindowOpen = (url: string) => {
-  window.open(url);
-};
 
 const works: NextPage = () => {
   return (
