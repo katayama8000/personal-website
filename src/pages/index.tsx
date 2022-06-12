@@ -57,7 +57,6 @@ const Home: NextPage = () => {
           )
         }
       />
-
       <Title
         title="Contact"
         description="Contact me on Twitter"
