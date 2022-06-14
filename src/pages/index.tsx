@@ -36,6 +36,11 @@ const Home: NextPage = () => {
           handleWindowOpen("https://qiita.com/t_109609akg")
         }
       />
+      <Title
+        title="Zenn"
+        description="Teck blog"
+        handleWindowOpen={() => handleWindowOpen("https://zenn.dev/tattu")}
+      />
       <Link href="works">
         <a>
           <Title title="Works" description="What I have build" />
