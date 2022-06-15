@@ -15,7 +15,7 @@ const Home: NextPage = () => {
           Tatsuhumi Katayama
         </div>
         <div className="pt-4 font-bold">
-          I am a enginner based in Nagoya/Japan.
+          I am a engineer based in Nagoya/Japan.
         </div>
       </header>
       <hr className="py-10" />
