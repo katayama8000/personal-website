@@ -28,10 +28,10 @@ const about = () => {
         <a className="text-5xl"> ← </a>
       </Link>
       <h1 className="py-10 text-3xl font-bold text-white">About</h1>
-      <div className="pb-5">I am a enginner based in Nagoya/Japan.</div>
+      <div className="pb-5">I am a engineering based in Nagoya/Japan.</div>
       <div>
-        I have 1 years of enginnering experience in Nogoya. Programming
-        languages I used at work are C and JavaScript.
+        I have 1 year of enginnering experience in Nogoya. Programming languages
+        I used at work are C and JavaScript.
         <br />
         Now, I am interested in TypeScript , Flutter and Design.
       </div>
