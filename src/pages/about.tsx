@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Grid, Image } from "@mantine/core";
-import { useMediaQuery, useViewportSize } from "src/lib/mantine";
+import { useMediaQuery } from "src/lib/mantine";
 
 const images = [
   "img/music/harukamirai.png",

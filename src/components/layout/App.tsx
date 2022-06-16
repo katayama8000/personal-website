@@ -1,6 +1,6 @@
-import { Image } from "@mantine/core";
-import React from "react";
-import { Button } from "src/lib/mantine";
+import React, { useEffect, useState } from "react";
+import { Image, MantineSize } from "@mantine/core";
+import { Button, useMediaQuery } from "src/lib/mantine";
 
 type Props = {
   name: string;
@@ -14,6 +14,13 @@ const handleWindowOpen = (url: string) => {
 };
 
 export const App: React.FC<Props> = ({ name, url, img, technologies }) => {
+  const largerThanXs = useMediaQuery("xs");
+  const [buttonSize, setButtonSize] = useState<MantineSize | undefined>("sm");
+  useEffect(() => {
+    if (!largerThanXs) {
+      setButtonSize("xs");
+    }
+  }, [largerThanXs]);
   return (
     <div>
       <div className="py-2 text-xl font-semibold text-white">{name}</div>
@@ -27,7 +34,7 @@ export const App: React.FC<Props> = ({ name, url, img, technologies }) => {
         {technologies.map((tech, index) => {
           return (
             <div key={index}>
-              <Button variant="outline" color={tech.color}>
+              <Button variant="outline" color={tech.color} size={buttonSize}>
                 {tech.tech}
               </Button>
             </div>
