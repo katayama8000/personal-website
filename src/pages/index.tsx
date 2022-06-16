@@ -8,7 +8,7 @@ const handleWindowOpen = (url: string) => {
 
 const Home: NextPage = () => {
   return (
-    <div className="px-6 py-14 sm:p-20">
+    <div className="px-4 py-14 sm:p-20">
       <header className="pb-10">
         <div className="h-[100px] w-[100px] rounded-full bg-green-600"></div>
         <div className="pt-10 text-3xl font-bold text-white">

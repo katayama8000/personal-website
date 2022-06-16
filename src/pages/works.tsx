@@ -3,9 +3,9 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { App } from "@component/layout/App";
 
-const works: NextPage = () => {
+const Works: NextPage = () => {
   return (
-    <div className="px-20 py-10">
+    <div className="px-4 py-14 sm:p-20">
       <Link href="/">
         <a className="text-5xl"> ← </a>
       </Link>
@@ -34,4 +34,4 @@ const works: NextPage = () => {
   );
 };
 
-export default works;
+export default Works;

@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Grid, Image } from "@mantine/core";
+import { useMediaQuery, useViewportSize } from "src/lib/mantine";
 
 const images = [
   "img/music/harukamirai.png",
@@ -21,9 +22,16 @@ const australia = [
   "img/australia/AUS4.png",
 ];
 
-const about = () => {
+const About = () => {
+  const largerThanXs = useMediaQuery("xs");
+  const [imageSize, setImageSize] = useState(172);
+  useEffect(() => {
+    if (!largerThanXs) {
+      setImageSize(152);
+    }
+  }, [largerThanXs]);
   return (
-    <div className="px-20 py-10">
+    <div className="px-4 py-14 sm:p-20">
       <Link href="/">
         <a className="text-5xl"> ← </a>
       </Link>
@@ -56,10 +64,10 @@ const about = () => {
         {images.map((url, index) => {
           return (
             <div key={index}>
-              <Grid.Col span={3}>
+              <Grid.Col sm={6}>
                 <Image
-                  width={172}
-                  height={172}
+                  width={imageSize}
+                  height={imageSize}
                   alt="with wife"
                   src={url}
                   radius="lg"
@@ -79,8 +87,8 @@ const about = () => {
             <div key={index}>
               <Grid.Col span={3}>
                 <Image
-                  width={172}
-                  height={172}
+                  width={imageSize}
+                  height={imageSize}
                   alt="with wife"
                   src={url}
                   radius="lg"
@@ -96,4 +104,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
