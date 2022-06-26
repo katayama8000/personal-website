@@ -7,13 +7,20 @@ type Props = {
   url: string;
   img: string;
   technologies: { tech: string; color: string }[];
+  description: string;
 };
 
 const handleWindowOpen = (url: string) => {
   window.open(url);
 };
 
-export const App: React.FC<Props> = ({ name, url, img, technologies }) => {
+export const Work: React.FC<Props> = ({
+  name,
+  url,
+  img,
+  technologies,
+  description,
+}) => {
   const largerThanXs = useMediaQuery("xs");
   const [buttonSize, setButtonSize] = useState<MantineSize | undefined>("sm");
   useEffect(() => {
@@ -24,6 +31,7 @@ export const App: React.FC<Props> = ({ name, url, img, technologies }) => {
   return (
     <div>
       <div className="py-2 text-xl font-semibold text-white">{name}</div>
+      <div className="py-3">{description}</div>
       <Image
         src={img}
         alt={name}
