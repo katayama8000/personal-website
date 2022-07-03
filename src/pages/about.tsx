@@ -31,7 +31,7 @@ const About = () => {
     }
   }, [largerThanXs]);
   return (
-    <div className="px-4 py-14 sm:p-20">
+    <div className="px-2 py-14 sm:p-20">
       <Link href="/">
         <a className="text-5xl"> ← </a>
       </Link>
