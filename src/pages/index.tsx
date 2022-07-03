@@ -53,6 +53,14 @@ const Home: NextPage = () => {
           handleWindowOpen("https://github.com/katayama8000")
         }
       />
+      {/* <Link href="qualification">
+        <a>
+          <Title
+            title="Qualification"
+            description="Those are my Qualification"
+          />
+        </a>
+      </Link> */}
       <Title
         title="My Comunity"
         description="I created a community on LINE"

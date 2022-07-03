@@ -17,7 +17,7 @@ const Works: NextPage = () => {
           { tech: "Vue.js", color: "green" },
           { tech: "firebase", color: "yellow" },
         ]}
-        description="This app is for my family. My dad runs a small company. He doesn't use this. Cuz He is japanse."
+        description="This app is for my family. My dad runs a small company. But He doesn't use this. Because He is japanse."
       />
       <Work
         name="memory with music"
