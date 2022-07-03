@@ -60,7 +60,7 @@ const About = () => {
         <br />
         We love music and movie. They brought us together.
       </div>
-      <Grid grow>
+      <Grid grow className="m-auto">
         {images.map((url, index) => {
           return (
             <div key={index}>
@@ -81,7 +81,7 @@ const About = () => {
         I lived in Australia after I graduated from high school.
         <br />I would like to visit Australia again.
       </div>
-      <Grid grow>
+      <Grid grow className="m-auto">
         {australia.map((url, index) => {
           return (
             <div key={index}>
