@@ -74,7 +74,7 @@ const Home: NextPage = () => {
         title="Contact"
         description="Contact me on Twitter"
         handleWindowOpen={() =>
-          handleWindowOpen("https://twitter.com/uCrnP01w7Wp3atY")
+          handleWindowOpen("https://twitter.com/IT_gorilla_")
         }
       />
     </div>
