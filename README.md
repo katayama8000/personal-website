@@ -1,4 +1,4 @@
-## this is my site
+## This is my site
 
 - mantine ver5 → ver6
 ```
