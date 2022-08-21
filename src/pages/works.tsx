@@ -31,6 +31,18 @@ const Works: NextPage = () => {
         ]}
         description="I develop this app nowdays. I will make this app SNS"
       />
+      <Work
+        name="snake game react"
+        url="https://snake-game-react-lilac.vercel.app/"
+        img="/img/work/snakegamereact.png"
+        technologies={[
+          { tech: "React.js", color: "default" },
+          { tech: "Next.js", color: "gray" },
+          { tech: "TypeScript", color: "indigo" },
+          { tech: "canvas", color: "red" },
+        ]}
+        description="This is the first game I made. I wanna make this more complex."
+      />
     </div>
   );
 };

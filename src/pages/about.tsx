@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Grid, Image } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
 
-const images = [
+const images: string[] = [
   "img/music/harukamirai.png",
   "img/music/bluehearts.png",
   "img/music/kururi.png",
@@ -15,7 +15,7 @@ const images = [
   "img/movie/goodwillhunting.png",
 ];
 
-const australia = [
+const australia: string[] = [
   "img/australia/AUS1.png",
   "img/australia/AUS2.png",
   "img/australia/AUS3.png",
