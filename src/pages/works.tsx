@@ -33,7 +33,7 @@ const Works: NextPage = () => {
       />
       <Work
         name="snake game react"
-        url="https://snake-game-react-lilac.vercel.app/"
+        url="https://snake-game-react-pgp9dpqo3-katayama8000.vercel.app/"
         img="/img/work/snakegamereact.png"
         technologies={[
           { tech: "React.js", color: "default" },
