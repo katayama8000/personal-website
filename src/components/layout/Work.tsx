@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Image, MantineSize } from "@mantine/core";
-import { Button, useMediaQuery } from "src/lib/mantine";
+import { Button, Image, MantineSize } from "@mantine/core";
+import { useMediaQuery } from "src/lib/mantine";
 
 type Props = {
   name: string;
