@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Image, MantineSize } from "@mantine/core";
+import { Avatar, Button, Image, MantineSize } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
 
 type Props = {
@@ -35,13 +35,15 @@ export const Work: React.FC<Props> = ({
       <Image
         src={img}
         alt={name}
-        className="border-2 border-solid border-gray-500 hover:opacity-60"
+        className="shadow-md hover:opacity-60"
         onClick={() => handleWindowOpen(url)}
+        radius="md"
       />
       <div className="flex justify-end">
         {technologies.map((tech, index) => {
           return (
             <div key={index}>
+              {/* <Avatar src="img/stack/vue.png" alt="it's me" /> */}
               <Button variant="outline" color={tech.color} size={buttonSize}>
                 {tech.tech}
               </Button>

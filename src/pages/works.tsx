@@ -22,14 +22,14 @@ const Works: NextPage = () => {
       <Work
         name="memory with music"
         url="https://memory-with-music.vercel.app/"
-        img="/img/work/memorywithmusic.png"
+        img="/img/work/music.png"
         technologies={[
           { tech: "React.js", color: "default" },
           { tech: "Next.js", color: "gray" },
           { tech: "TypeScript", color: "indigo" },
           { tech: "supabase", color: "teal" },
         ]}
-        description="I develop this app nowdays. I will make this app SNS"
+        description="music is the best medicine."
       />
       <Work
         name="snake game react"
@@ -42,6 +42,18 @@ const Works: NextPage = () => {
           { tech: "canvas", color: "red" },
         ]}
         description="This is the first game I made. I wanna make this more complex."
+      />
+      <Work
+        name="Web-Expenses"
+        url="https://web-expenses-reactjs.vercel.app/"
+        img="/img/work/web.png"
+        technologies={[
+          { tech: "React.js", color: "default" },
+          { tech: "Next.js", color: "gray" },
+          { tech: "TypeScript", color: "indigo" },
+          { tech: "supabase", color: "teal" },
+        ]}
+        description="Thi is not finished. I make this at another repository. Because My company use this app."
       />
     </div>
   );
