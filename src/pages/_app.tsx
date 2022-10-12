@@ -5,13 +5,13 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+  const { pathname } = useRouter();
   return (
     <>
       <Head>
         <title>This is about me</title>
       </Head>
-      <main className="m-auto max-w-4xl">
+      <main className="m-auto max-w-4xl" role="main">
         <MantineProvider
           withGlobalStyles
           withNormalizeCSS
@@ -21,11 +21,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         </MantineProvider>
       </main>
 
-      {router.pathname === "/" && (
-        <div>
+      {pathname === "/" && (
+        <footer>
           <hr />
           <div className="p-5 text-center">&copy;2022 katayama8000</div>
-        </div>
+        </footer>
       )}
     </>
   );

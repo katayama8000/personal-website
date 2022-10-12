@@ -13,7 +13,7 @@ export const Title: React.FC<Props> = ({
 }) => {
   return (
     <div>
-      <div className="py-4">
+      <article className="py-4">
         <span
           className="cursor-pointer text-3xl font-bold text-white hover:underline"
           onClick={() => {
@@ -25,7 +25,7 @@ export const Title: React.FC<Props> = ({
           {title}
         </span>
         <div className="py-2">{description}</div>
-      </div>
+      </article>
     </div>
   );
 };
