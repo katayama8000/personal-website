@@ -53,7 +53,7 @@ const Works: NextPage = () => {
           { tech: "TypeScript", color: "indigo" },
           { tech: "supabase", color: "teal" },
         ]}
-        description="Thi is not finished. I make this at another repository. Because My company use this app."
+        description="This is not finished. I make this at another repository. Because My company use this app."
       />
     </div>
   );
