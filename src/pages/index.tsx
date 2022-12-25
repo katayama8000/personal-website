@@ -1,11 +1,48 @@
 import type { NextPage } from "next";
 import { Title } from "@component/layout/Title";
-import Link from "next/link";
 
-const handleWindowOpen = (url: string) => {
-  window.open(url);
-};
-
+const TitleInfomationList = [
+  {
+    title: "About",
+    description: "Brief introduction about me",
+    pageUrl: "about",
+  },
+  {
+    title: "Note",
+    description: "Anything blog",
+    url: "https://note.com/with_wife",
+  },
+  {
+    title: "Qiita",
+    description: "Teck blog",
+    url: "https://qiita.com/t_109609akg",
+  },
+  {
+    title: "Zenn",
+    description: "Teck blog",
+    url: "https://zenn.dev/tattu",
+  },
+  {
+    title: "Works",
+    description: "What I have build",
+    pageUrl: "works",
+  },
+  {
+    title: "Git hub",
+    description: "I try to write code everyday",
+    url: "https://github.com/katayama8000",
+  },
+  {
+    title: "My Comunity",
+    description: "I created a community on LINE",
+    url: "https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+  },
+  {
+    title: "Contact",
+    description: "Contact me on Twitter",
+    url: "https://twitter.com/IT_gorilla_",
+  },
+];
 const Home: NextPage = () => {
   return (
     <div className="px-4 py-14 sm:p-20">
@@ -19,64 +56,15 @@ const Home: NextPage = () => {
         </div>
       </header>
       <hr className="py-10" />
-      <Link href="about">
-        <a>
-          <Title title="About" description="Brief introduction about me" />
-        </a>
-      </Link>
-      <Title
-        title="Note"
-        description="Anything blog"
-        handleWindowOpen={() => handleWindowOpen("https://note.com/with_wife")}
-      />
-      <Title
-        title="Qiita"
-        description="Teck blog"
-        handleWindowOpen={() =>
-          handleWindowOpen("https://qiita.com/t_109609akg")
-        }
-      />
-      <Title
-        title="Zenn"
-        description="Teck blog"
-        handleWindowOpen={() => handleWindowOpen("https://zenn.dev/tattu")}
-      />
-      <Link href="works">
-        <a>
-          <Title title="Works" description="What I have build" />
-        </a>
-      </Link>
-      <Title
-        title="Git hub"
-        description="I try to write code everyday"
-        handleWindowOpen={() =>
-          handleWindowOpen("https://github.com/katayama8000")
-        }
-      />
-      {/* <Link href="qualification">
-        <a>
-          <Title
-            title="Qualification"
-            description="Those are my Qualification"
-          />
-        </a>
-      </Link> */}
-      <Title
-        title="My Comunity"
-        description="I created a community on LINE"
-        handleWindowOpen={() =>
-          handleWindowOpen(
-            "https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-          )
-        }
-      />
-      <Title
-        title="Contact"
-        description="Contact me on Twitter"
-        handleWindowOpen={() =>
-          handleWindowOpen("https://twitter.com/IT_gorilla_")
-        }
-      />
+      {TitleInfomationList.map((titleInfomation) => (
+        <Title
+          key={titleInfomation.title}
+          title={titleInfomation.title}
+          description={titleInfomation.description}
+          url={titleInfomation.url}
+          pageUrl={titleInfomation.pageUrl}
+        />
+      ))}
     </div>
   );
 };

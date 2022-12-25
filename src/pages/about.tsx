@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Grid, Image } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
 
-const images: string[] = [
+const images = [
   "img/music/harukamirai.png",
   "img/music/bluehearts.png",
   "img/music/kururi.png",
@@ -13,14 +13,14 @@ const images: string[] = [
   "img/movie/greenbook.png",
   "img/movie/joker.png",
   "img/movie/goodwillhunting.png",
-];
+] as const;
 
-const australia: string[] = [
+const australia = [
   "img/australia/AUS1.png",
   "img/australia/AUS2.png",
   "img/australia/AUS3.png",
   "img/australia/AUS4.png",
-];
+] as const;
 
 const About = () => {
   const largerThanXs = useMediaQuery("xs");
@@ -38,10 +38,11 @@ const About = () => {
       <h1 className="py-10 text-3xl font-bold text-white">About</h1>
       <div className="pb-5"> I am a engineer based in Nagoya/Japan.</div>
       <div>
-        I have a year of enginnering experience in Nogoya. Programming languages
-        I used at work are C and JavaScript.
+        I have two years of enginnering experience in Nogoya. Programming
+        languages I used at work are C, JavaScript, Typescript.
         <br />
-        Now, I am interested in TypeScript , Flutter and Design.
+        Fremework and libraries I used are React.js, Vue.js, Angular etc... .
+        <div className=""></div>
       </div>
       <h1 className="py-10 text-xl font-bold text-white">Outside of work</h1>
       <div className="pb-10">
@@ -56,14 +57,14 @@ const About = () => {
         >
           Twitter account
         </span>
-        . Now she is obsessed with investment.
+        . Now she has may followers. Bcause She is attractive.
         <br />
         We love music and movie. They brought us together.
       </div>
       <Grid grow>
-        {images.map((url, index) => {
+        {images.map((url) => {
           return (
-            <div key={index}>
+            <div key={url}>
               <Grid.Col sm={6}>
                 <Image
                   width={imageSize}
@@ -82,9 +83,9 @@ const About = () => {
         <br />I would like to visit Australia again.
       </div>
       <Grid grow>
-        {australia.map((url, index) => {
+        {australia.map((url) => {
           return (
-            <div key={index}>
+            <div key={url}>
               <Grid.Col span={3}>
                 <Image
                   width={imageSize}

@@ -1,24 +1,37 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 type Props = {
   title: string;
   description?: string;
-  handleWindowOpen?: (url: string) => void;
+  url?: string;
+  pageUrl?: string;
 };
 
 export const Title: React.FC<Props> = ({
   title,
   description,
-  handleWindowOpen,
+  url,
+  pageUrl,
 }) => {
+  const router = useRouter();
+  const handleWindowOpen = (url: string) => {
+    window.open(url);
+  };
+
+  const changePage = (pageUrl: string) => {
+    router.push(pageUrl);
+  };
   return (
     <div>
       <article className="py-4">
         <span
           className="cursor-pointer text-3xl font-bold text-white hover:underline"
           onClick={() => {
-            if (handleWindowOpen) {
-              handleWindowOpen!("https://note.com/with_wife");
+            if (url) {
+              handleWindowOpen(url);
+            } else if (pageUrl) {
+              changePage(pageUrl);
             }
           }}
         >
