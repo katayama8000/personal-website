@@ -5,8 +5,9 @@ import { Work } from "@component/layout/Work";
 const Works: NextPage = () => {
   return (
     <div className="px-4 py-14 sm:p-20">
-      <Link href="/">
-        <a className="text-5xl"> ← </a>
+      <Link href="/" className="text-5xl">
+        {" "}
+        ←{" "}
       </Link>
       <h1 className="py-10 text-3xl font-bold text-white">Works</h1>
       <Work

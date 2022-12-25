@@ -31,9 +31,10 @@ const About = () => {
     }
   }, [largerThanXs]);
   return (
-    <div className="px-2 py-14 sm:p-20">
-      <Link href="/">
-        <a className="text-5xl"> ← </a>
+    <div className="px-2 py-14  sm:p-20">
+      <Link href="/" className="text-5xl">
+        {" "}
+        ←{" "}
       </Link>
       <h1 className="py-10 text-3xl font-bold text-white">About</h1>
       <div className="pb-5"> I am a engineer based in Nagoya/Japan.</div>
