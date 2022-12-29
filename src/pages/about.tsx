@@ -72,6 +72,7 @@ const About = () => {
                   src={url}
                   radius="lg"
                   withPlaceholder
+                  className="cursor-pointer"
                 />
               </Grid.Col>
             </div>
@@ -93,6 +94,8 @@ const About = () => {
                   alt="with wife"
                   src={url}
                   radius="lg"
+                  withPlaceholder
+                  className="cursor-pointer"
                 />
               </Grid.Col>
             </div>

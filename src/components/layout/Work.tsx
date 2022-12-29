@@ -35,7 +35,7 @@ export const Work: React.FC<Props> = ({
       <Image
         src={img}
         alt={name}
-        className="shadow-md hover:opacity-60"
+        className="cursor-pointer shadow-md hover:opacity-60"
         onClick={() => handleWindowOpen(url)}
         radius="md"
         withPlaceholder
