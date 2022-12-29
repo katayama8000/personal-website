@@ -11,6 +11,18 @@ const Works: NextPage = () => {
       </Link>
       <h1 className="py-10 text-3xl font-bold text-white">Works</h1>
       <Work
+        name="Nftotaku"
+        url="https://nftotaku.xyz/"
+        img="/img/work/nft.png"
+        technologies={[
+          { tech: "React.js", color: "default" },
+          { tech: "Next.js", color: "gray" },
+          { tech: "TypeScript", color: "indigo" },
+          { tech: "supabase", color: "teal" },
+        ]}
+        description="Welcome to our Nft world."
+      />
+      <Work
         name="invoice"
         url="https://invoice-app-d6e30.web.app/"
         img="/img/work/invoice.png"
