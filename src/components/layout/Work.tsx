@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Avatar, Button, Image, MantineSize } from "@mantine/core";
+import { useEffect, useState } from "react";
+import { Button, Image, MantineSize } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
 
 type Props = {
@@ -38,6 +38,7 @@ export const Work: React.FC<Props> = ({
         className="shadow-md hover:opacity-60"
         onClick={() => handleWindowOpen(url)}
         radius="md"
+        withPlaceholder
       />
       <div className="flex justify-end">
         {technologies.map((tech, index) => {

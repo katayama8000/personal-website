@@ -1,5 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Grid, Image } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
@@ -43,7 +42,6 @@ const About = () => {
         languages I used at work are C, JavaScript, Typescript.
         <br />
         Fremework and libraries I used are React.js, Vue.js, Angular etc... .
-        <div className=""></div>
       </div>
       <h1 className="py-10 text-xl font-bold text-white">Outside of work</h1>
       <div className="pb-10">
@@ -73,6 +71,7 @@ const About = () => {
                   alt="with wife"
                   src={url}
                   radius="lg"
+                  withPlaceholder
                 />
               </Grid.Col>
             </div>
