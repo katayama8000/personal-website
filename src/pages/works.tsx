@@ -25,8 +25,7 @@ const Works: NextPage = () => {
         { tech: "firebase", color: "yellow" },
       ],
 
-      description:
-        "This app is for my family. My dad runs a small company. But He doesn't use this. Because He is japanse.",
+      description: "web invoice app.",
     },
     {
       name: "memory with music",
@@ -38,8 +37,7 @@ const Works: NextPage = () => {
         { tech: "TypeScript", color: "indigo" },
         { tech: "supabase", color: "teal" },
       ],
-      description:
-        "This app is for my family. My dad runs a small company. But He doesn't use this. Because He is japanse.",
+      description: "music is good medicine.",
     },
     {
       name: "snake game react",
@@ -51,8 +49,7 @@ const Works: NextPage = () => {
         { tech: "TypeScript", color: "indigo" },
         { tech: "canvas", color: "red" },
       ],
-      description:
-        "This is the first game I made. I wanna make this more complex.",
+      description: "This is the first game I made.",
     },
     {
       name: "Web-Expenses",
