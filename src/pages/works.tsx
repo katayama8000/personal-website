@@ -41,7 +41,7 @@ const Works: NextPage = () => {
     },
     {
       name: "snake game react",
-      url: "https://snake-game-react.vercel.app/",
+      url: "https://snake-game-react-lilac.vercel.app/",
       img: "/img/work/snake.png",
       technologies: [
         { tech: "React.js", color: "default" },
