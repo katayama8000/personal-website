@@ -344,12 +344,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:5.9.5":
-  version: 5.9.5
-  resolution: "@mantine/hooks@npm:5.9.5"
+"@mantine/hooks@npm:5.10.3":
+  version: 5.10.3
+  resolution: "@mantine/hooks@npm:5.10.3"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 250775bf440afcc8000585fa98c54b1f6d125b1d3bc4e5f118c539f6a6bf674264acd1cb72221f5786a32c5207340990463a82a66365e810e2517858770d5302
+  checksum: 629554658e910dec1c14ecbdaf8e48c1ce2af022044269e73ff069d719a4f9b68428bb75ade5108ace40bd29253658e663c594a237e080226de28705c10c871e
   languageName: node
   linkType: hard
 
@@ -4098,7 +4098,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/server": ^11.10.0
     "@mantine/core": 5.10.3
-    "@mantine/hooks": 5.9.5
+    "@mantine/hooks": 5.10.3
     "@mantine/next": 5.9.5
     "@types/node": 18.11.17
     "@types/react": 18.0.26
