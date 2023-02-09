@@ -38,7 +38,7 @@ const TitleInfomationList = [
     url: "https://github.com/katayama8000",
   },
   {
-    title: "My Comunity",
+    title: "My Community",
     description: "I created a community on LINE",
     url: "https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
   },
