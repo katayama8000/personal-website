@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button, Image, MantineSize } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
 
@@ -14,7 +14,7 @@ const handleWindowOpen = (url: string) => {
   window.open(url);
 };
 
-export const Work: React.FC<Props> = ({
+export const Work: FC<Props> = ({
   name,
   url,
   img,

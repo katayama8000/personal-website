@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Grid, Image } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
+import { NextPage } from "next/types";
 
 const IMAGES = [
   "img/music/harukamirai.png",
@@ -21,7 +22,7 @@ const AUSTRALIA = [
   "img/australia/AUS4.png",
 ] as const;
 
-const About = () => {
+const About: NextPage = () => {
   const largerThanXs = useMediaQuery("xs");
   const [imageSize, setImageSize] = useState(172);
   useEffect(() => {
