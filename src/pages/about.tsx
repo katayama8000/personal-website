@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Grid, Image } from "@mantine/core";
 import { useMediaQuery } from "src/lib/mantine";
 
-const images = [
+const IMAGES = [
   "img/music/harukamirai.png",
   "img/music/bluehearts.png",
   "img/music/kururi.png",
@@ -14,7 +14,7 @@ const images = [
   "img/movie/goodwillhunting.png",
 ] as const;
 
-const australia = [
+const AUSTRALIA = [
   "img/australia/AUS1.png",
   "img/australia/AUS2.png",
   "img/australia/AUS3.png",
@@ -61,7 +61,7 @@ const About = () => {
         We love music and movie. They brought us together.
       </div>
       <Grid grow>
-        {images.map((url) => {
+        {IMAGES.map((url) => {
           return (
             <div key={url}>
               <Grid.Col sm={6}>
@@ -84,7 +84,7 @@ const About = () => {
         <br />I would like to visit Australia again.
       </div>
       <Grid grow>
-        {australia.map((url) => {
+        {AUSTRALIA.map((url) => {
           return (
             <div key={url}>
               <Grid.Col span={3}>

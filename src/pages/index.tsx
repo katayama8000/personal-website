@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Title } from "@component/layout/Title";
 
-const TitleInfomationList = [
+const TITLE_INFOMATION_LIST = [
   {
     title: "About",
     description: "Brief introduction about me",
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
         </div>
       </header>
       <hr className="py-10" />
-      {TitleInfomationList.map((titleInfomation) => (
+      {TITLE_INFOMATION_LIST.map((titleInfomation) => (
         <Title
           key={titleInfomation.title}
           title={titleInfomation.title}
