@@ -9,19 +9,29 @@ const TITLE_INFOMATION_LIST = [
     pageUrl: 'about',
   },
   {
-    title: 'Note',
-    description: 'Anything blog',
-    url: 'https://note.com/with_wife',
+    title: 'GohanDAO',
+    description: 'I created a DAO on discord',
+    url: 'https://discord.com/invite/CCwTrB2k6r',
   },
   {
-    title: 'Qiita',
-    description: 'Teck blog',
-    url: 'https://qiita.com/t_109609akg',
+    title: 'My Line Community',
+    description: 'I created a community on LINE',
+    url: 'https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default',
   },
+  // {
+  //   title: 'Qiita',
+  //   description: 'Teck blog',
+  //   url: 'https://qiita.com/t_109609akg',
+  // },
   {
     title: 'Zenn',
     description: 'Teck blog',
     url: 'https://zenn.dev/tattu',
+  },
+  {
+    title: 'Note',
+    description: 'Anything blog',
+    url: 'https://note.com/with_wife',
   },
   {
     title: 'FamilyBlog',
@@ -37,16 +47,6 @@ const TITLE_INFOMATION_LIST = [
     title: 'Git hub',
     description: 'I try to write code everyday',
     url: 'https://github.com/katayama8000',
-  },
-  {
-    title: 'GohanDAO',
-    description: 'I created a DAO on discord',
-    url: 'https://discord.com/invite/CCwTrB2k6r',
-  },
-  {
-    title: 'My Line Community',
-    description: 'I created a community on LINE',
-    url: 'https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default',
   },
   {
     title: 'Contact',
