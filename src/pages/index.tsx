@@ -14,8 +14,8 @@ const TITLE_INFOMATION_LIST = [
     url: 'https://discord.com/invite/CCwTrB2k6r',
   },
   {
-    title: 'My Line Community',
-    description: 'I created a community on LINE',
+    title: 'Line Community',
+    description: 'I created a React community on LINE',
     url: 'https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default',
   },
   // {
