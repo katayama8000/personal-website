@@ -55,25 +55,13 @@ const TITLE_INFOMATION_LIST = [
   },
 ];
 
-const ICON = [
-  'img/icon/icon1.png',
-  'img/icon/icon2.png',
-  'img/icon/icon3.png',
-  'img/icon/icon4.png',
-  'img/icon/icon5.png',
-  'img/icon/icon6.png',
-  'img/icon/icon7.png',
-  'img/icon/icon8.png',
-] as const;
-
 const Home: NextPage = () => {
-  const iconPath = ICON[Math.floor(Math.random() * ICON.length)];
   return (
     <div className="px-4 py-14 sm:p-20">
       <header className="pb-10">
         {/* <div className="h-[100px] w-[100px] rounded-full bg-green-600"></div> */}
         <Image
-          src={`/${iconPath}`}
+          src={`/img/icon/icon${Math.floor(Math.random() * 8) + 1}.png`}
           alt="Picture of the author"
           width={150}
           height={150}
