@@ -60,8 +60,15 @@ const Home: NextPage = () => {
     <div className="px-4 py-14 sm:p-20">
       <header className="pb-10">
         {/* <div className="h-[100px] w-[100px] rounded-full bg-green-600"></div> */}
-        <Image
+        {/* <Image
           src={`/img/icon/icon${Math.floor(Math.random() * 8) + 1}.png`}
+          alt="Picture of the author"
+          width={150}
+          height={150}
+          className="rounded-full"
+        /> */}
+        <Image
+          src={`/img/icon/icon4.png`}
           alt="Picture of the author"
           width={150}
           height={150}
