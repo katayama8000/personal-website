@@ -327,20 +327,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:5.10.3":
-  version: 5.10.3
-  resolution: "@mantine/core@npm:5.10.3"
+"@mantine/core@npm:5.10.4":
+  version: 5.10.4
+  resolution: "@mantine/core@npm:5.10.4"
   dependencies:
     "@floating-ui/react": ^0.19.1
-    "@mantine/styles": 5.10.3
-    "@mantine/utils": 5.10.3
+    "@mantine/styles": 5.10.4
+    "@mantine/utils": 5.10.4
     "@radix-ui/react-scroll-area": 1.0.2
     react-textarea-autosize: 8.3.4
   peerDependencies:
-    "@mantine/hooks": 5.10.3
+    "@mantine/hooks": 5.10.4
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 460e613e90ecd94a9414bb93a98046e076256fa54ec5cd0b43d20815755e7862826d912a516591d2a2e0356647d72b293564d2ccb9ca1fb8999da0e963d701bd
+  checksum: 98cba720fa9764a7a45b13d167ad2dce1af1b639c202a25cf60c8ca439e386dfddefae262e770df62348af90647ba6cbc095c074a8f0582968059450fbbc2ff0
   languageName: node
   linkType: hard
 
@@ -396,12 +396,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/utils@npm:5.10.3":
-  version: 5.10.3
-  resolution: "@mantine/utils@npm:5.10.3"
+"@mantine/styles@npm:5.10.4":
+  version: 5.10.4
+  resolution: "@mantine/styles@npm:5.10.4"
+  dependencies:
+    clsx: 1.1.1
+    csstype: 3.0.9
+  peerDependencies:
+    "@emotion/react": ">=11.9.0"
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 54af835dca68a457be758570c82eab2d602da19a24da599b2f2c02f451be136a400b2f8efbbdc7d1a677188b57515d3ace23df0b8aa8e37c4ddf3a2fdbce1630
+  languageName: node
+  linkType: hard
+
+"@mantine/utils@npm:5.10.4":
+  version: 5.10.4
+  resolution: "@mantine/utils@npm:5.10.4"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: 063237e49f3c52e3bbcd99e7a8383ac881718d9e1e039d32249231370a463a19e070cea7f90c3c0fea2933c3c162f5509a0f2add015db2aeb90f7945cd954a12
+  checksum: 96e2602f8500c29b5979d4fe0b3456c8de911ff1bd2ef216d960b23a5370ff6828871aa859538a4004ad095fb63d7e0e76cdfb365bdb930f70f8076d730302c1
   languageName: node
   linkType: hard
 
@@ -4094,7 +4108,7 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.10.5
     "@emotion/server": ^11.10.0
-    "@mantine/core": 5.10.3
+    "@mantine/core": 5.10.4
     "@mantine/hooks": 5.10.3
     "@mantine/next": 5.10.3
     "@types/node": 18.11.17
