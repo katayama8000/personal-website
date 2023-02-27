@@ -736,10 +736,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.11.17":
-  version: 18.11.17
-  resolution: "@types/node@npm:18.11.17"
-  checksum: 1933afd068d5c75c068c6c4df6d10edb3b0b2bb6503d544e2f0496ac007c90596e6a5e284a8ef032451bc16f871b7e46719d7d2bea60e9b25d13a77d52161cac
+"@types/node@npm:18.14.2":
+  version: 18.14.2
+  resolution: "@types/node@npm:18.14.2"
+  checksum: 53c07e721f6ae33de71306f6a0b75dae6066a4f55bd5484c93bd59ff25f0c5f004ceafeef509a4d0cb9e24a247efc34d50489bcc1b05a53ecc68e2fc088e65cb
   languageName: node
   linkType: hard
 
@@ -4089,7 +4089,7 @@ __metadata:
     "@mantine/core": 5.10.3
     "@mantine/hooks": 5.10.3
     "@mantine/next": 5.10.3
-    "@types/node": 18.11.17
+    "@types/node": 18.14.2
     "@types/react": 18.0.28
     autoprefixer: 10.4.13
     concurrently: 7.6.0
