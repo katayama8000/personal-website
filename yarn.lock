@@ -3729,9 +3729,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:0.2.3":
-  version: 0.2.3
-  resolution: "prettier-plugin-tailwindcss@npm:0.2.3"
+"prettier-plugin-tailwindcss@npm:0.2.4":
+  version: 0.2.4
+  resolution: "prettier-plugin-tailwindcss@npm:0.2.4"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-php": "*"
@@ -3780,7 +3780,7 @@ __metadata:
       optional: true
     prettier-plugin-twig-melody:
       optional: true
-  checksum: f43599b2b03b80899c32e436a518a5c139aa8b6cc59c4d73f7c95222d99f3c3b418adb2d61145602c86b0827804fa2469a927ed696c5270d0a91dfeb18246509
+  checksum: 9f74d1c80e9151636c748baac13e736a81ae47fa2b2aaf66f9e4691a619a565439780c39491dccb1d0df4846a011b1d69c882e733ed20525d93a84c345b8321d
   languageName: node
   linkType: hard
 
@@ -4100,7 +4100,7 @@ __metadata:
     pathpida: 0.20.1
     postcss: 8.4.21
     prettier: 2.8.1
-    prettier-plugin-tailwindcss: 0.2.3
+    prettier-plugin-tailwindcss: 0.2.4
     react: 18.2.0
     react-dom: 18.2.0
     react-error-boundary: 3.1.4
