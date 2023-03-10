@@ -42,29 +42,29 @@ const About: NextPage = () => {
           ←{' '}
         </Link>
         <h1 className="py-10 text-3xl font-bold text-white">About</h1>
-        <div className="pb-5"> I am a engineer based in Nagoya/Japan.</div>
         <div>
-          I have two years of enginnering experience in Nogoya. Programming
-          languages I used at work are C, JavaScript, Typescript.
+          I am an engineer based in Nagoya, Japan with two years of engineering
+          experience. The programming languages I have used at work include C,
+          JavaScript, and TypeScript.
           <br />
-          Fremework and libraries I used are React.js, Vue.js, Angular etc... .
+          Additionally, I have experience with various frameworks and libraries
+          such as React.js, Vue.js, and Angular.
         </div>
         <h1 className="py-10 text-xl font-bold text-white">Outside of work</h1>
         <div className="pb-10">
-          I got married two years ago. All I want is enjoying life with her.
-          <br />
-          This is her
+          I got married two years ago, and all I want is to enjoy life with my
+          wife. She has gained many followers on
           <span
             onClick={() => {
               window.open('https://twitter.com/nimanimoney');
             }}
-            className="cursor-pointer pl-1 underline"
+            className="cursor-pointer px-1 underline"
           >
-            Twitter account
+            Twitter
           </span>
-          . Now she has may followers. Bcause She is attractive.
+          due to her attractive personality.
           <br />
-          We love music and movie. They brought us together.
+          We both love music and movies, which brought us together.
         </div>
         <Grid grow>
           {IMAGES.map((url) => {
@@ -86,8 +86,8 @@ const About: NextPage = () => {
           })}
         </Grid>
         <div className="pt-20 pb-10">
-          I lived in Australia after I graduated from high school.
-          <br />I would like to visit Australia again.
+          After graduating from high school, I lived in Australia and now I
+          would like to visit the country again.
         </div>
         <Grid grow>
           {AUSTRALIA.map((url) => {
