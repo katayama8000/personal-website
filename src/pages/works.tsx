@@ -1,91 +1,97 @@
-import type { NextPage } from "next";
-import Link from "next/link";
-import { Work } from "@component/layout/Work";
+import type { NextPage } from 'next';
+import Link from 'next/link';
+import { Work } from '@component/layout/Work';
+import Head from 'next/head';
 
 const WORK_INFOMATION_LIST = [
   {
-    name: "Nftotaku",
-    url: "https://nftotaku.xyz/",
-    img: "/img/work/nft.png",
+    name: 'Nftotaku',
+    url: 'https://nftotaku.xyz/',
+    img: '/img/work/nft.png',
     technologies: [
-      { tech: "React.js", color: "default" },
-      { tech: "Next.js", color: "gray" },
-      { tech: "TypeScript", color: "indigo" },
-      { tech: "supabase", color: "teal" },
+      { tech: 'React.js', color: 'default' },
+      { tech: 'Next.js', color: 'gray' },
+      { tech: 'TypeScript', color: 'indigo' },
+      { tech: 'supabase', color: 'teal' },
     ],
-    description: "Welcome to our Nft world.",
+    description: 'Welcome to our Nft world.',
   },
   {
-    name: "invoice",
-    url: "https://invoice-app-d6e30.web.app/",
-    img: "/img/work/invoice.png",
+    name: 'invoice',
+    url: 'https://invoice-app-d6e30.web.app/',
+    img: '/img/work/invoice.png',
     technologies: [
-      { tech: "Vue.js", color: "green" },
-      { tech: "firebase", color: "yellow" },
+      { tech: 'Vue.js', color: 'green' },
+      { tech: 'firebase', color: 'yellow' },
     ],
 
-    description: "web invoice app.",
+    description: 'web invoice app.',
   },
   {
-    name: "memory with music",
-    url: "https://memory-with-music.vercel.app/",
-    img: "/img/work/music.png",
+    name: 'memory with music',
+    url: 'https://memory-with-music.vercel.app/',
+    img: '/img/work/music.png',
     technologies: [
-      { tech: "React.js", color: "default" },
-      { tech: "Next.js", color: "gray" },
-      { tech: "TypeScript", color: "indigo" },
-      { tech: "supabase", color: "teal" },
+      { tech: 'React.js', color: 'default' },
+      { tech: 'Next.js', color: 'gray' },
+      { tech: 'TypeScript', color: 'indigo' },
+      { tech: 'supabase', color: 'teal' },
     ],
-    description: "music is good medicine.",
+    description: 'music is good medicine.',
   },
   {
-    name: "snake game react",
-    url: "https://snake-game-react-lilac.vercel.app/",
-    img: "/img/work/snake.png",
+    name: 'snake game react',
+    url: 'https://snake-game-react-lilac.vercel.app/',
+    img: '/img/work/snake.png',
     technologies: [
-      { tech: "React.js", color: "default" },
-      { tech: "Next.js", color: "gray" },
-      { tech: "TypeScript", color: "indigo" },
-      { tech: "canvas", color: "red" },
+      { tech: 'React.js', color: 'default' },
+      { tech: 'Next.js', color: 'gray' },
+      { tech: 'TypeScript', color: 'indigo' },
+      { tech: 'canvas', color: 'red' },
     ],
-    description: "This is the first game I made.",
+    description: 'This is the first game I made.',
   },
   {
-    name: "Web-Expenses",
-    url: "https://web-expenses-reactjs.vercel.app/",
-    img: "/img/work/web.png",
+    name: 'Web-Expenses',
+    url: 'https://web-expenses-reactjs.vercel.app/',
+    img: '/img/work/web.png',
     technologies: [
-      { tech: "React.js", color: "default" },
-      { tech: "Next.js", color: "gray" },
-      { tech: "TypeScript", color: "indigo" },
-      { tech: "supabase", color: "teal" },
+      { tech: 'React.js', color: 'default' },
+      { tech: 'Next.js', color: 'gray' },
+      { tech: 'TypeScript', color: 'indigo' },
+      { tech: 'supabase', color: 'teal' },
     ],
     description:
-      "This is not finished. I make this at another repository. Because My company use this app.",
+      'This is not finished. I make this at another repository. Because My company use this app.',
   },
 ];
 
 const Works: NextPage = () => {
   return (
-    <div className="px-4 py-14 sm:p-20">
-      <Link href="/" className="text-5xl">
-        {" "}
-        ←{" "}
-      </Link>
-      <h1 className="py-10 text-3xl font-bold text-white">Works</h1>
-      {WORK_INFOMATION_LIST.map((work) => {
-        return (
-          <Work
-            key={work.name}
-            name={work.name}
-            url={work.url}
-            img={work.img}
-            technologies={work.technologies}
-            description={work.description}
-          />
-        );
-      })}
-    </div>
+    <>
+      <Head>
+        <title>works</title>
+      </Head>
+      <div className="px-4 py-14 sm:p-20">
+        <Link href="/" className="text-5xl">
+          {' '}
+          ←{' '}
+        </Link>
+        <h1 className="py-10 text-3xl font-bold text-white">Works</h1>
+        {WORK_INFOMATION_LIST.map((work) => {
+          return (
+            <Work
+              key={work.name}
+              name={work.name}
+              url={work.url}
+              img={work.img}
+              technologies={work.technologies}
+              description={work.description}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 
