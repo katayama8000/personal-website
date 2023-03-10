@@ -68,7 +68,7 @@ const Home: NextPage = () => {
           className="rounded-full"
         /> */}
         <Image
-          src={`/img/icon/icon4.png`}
+          src={`/img/icon/icon00.png`}
           alt="Picture of the author"
           width={150}
           height={150}
