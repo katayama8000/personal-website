@@ -329,32 +329,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/next@npm:5.10.5":
-  version: 5.10.5
-  resolution: "@mantine/next@npm:5.10.5"
+"@mantine/next@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@mantine/next@npm:6.0.0"
   dependencies:
-    "@mantine/ssr": 5.10.5
-    "@mantine/styles": 5.10.5
+    "@mantine/ssr": 6.0.0
+    "@mantine/styles": 6.0.0
   peerDependencies:
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 767caba05493f65929e44a95da851a50d9ba104b188f807e98a376aa84ec7d45860163f6b356bad7f5fb3d35fe27e48125fc543de2c1457bf11ba4b5f8ef458b
+  checksum: 05d5a66fcdb130e4f97b787477feaf76db06a32d45794af7104563b1928cac755b9be52dfd23e778b9e847b8d2f38a064423f01f5192570d90121d4743c40b1b
   languageName: node
   linkType: hard
 
-"@mantine/ssr@npm:5.10.5":
-  version: 5.10.5
-  resolution: "@mantine/ssr@npm:5.10.5"
+"@mantine/ssr@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@mantine/ssr@npm:6.0.0"
   dependencies:
-    "@mantine/styles": 5.10.5
+    "@mantine/styles": 6.0.0
     html-react-parser: 1.4.12
   peerDependencies:
     "@emotion/react": ">=11.9.0"
     "@emotion/server": ">=11.4.0"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 34058994cc207fd83e3b1e7ba5c6da76ce495fe45134fe9d31ed64a0201e4f1ce9100a26ededb3e50f1082c0c4b8d0c28d3235c64f27695b1a7948c75ad9b869
+  checksum: eea337164c7d8afb0b2cf05531ed3448430e555eb567d64599d20cb1751f32fd3518ac490a45638396b512d313710b0a1a7c4bfcdbffbc02523f8fcb9128d2d1
   languageName: node
   linkType: hard
 
@@ -369,6 +369,20 @@ __metadata:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
   checksum: 7c7322779e21681a58c80dddfb30a9ce5cfecfa0854bc35921533ebe8fb101199f9626cd38bfa2dea31e9d7ffc5a25e2005c62a5feaf3cb766b540c480a449da
+  languageName: node
+  linkType: hard
+
+"@mantine/styles@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@mantine/styles@npm:6.0.0"
+  dependencies:
+    clsx: 1.1.1
+    csstype: 3.0.9
+  peerDependencies:
+    "@emotion/react": ">=11.9.0"
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: c369d10719bab36b03cdfa6b46a495b767dcf76ea4f1f5d5f9e5596b52ef0f1b0c295c8cc854d12e9bb7778c9ff80f810a44a929dd9646638da783589fedbf73
   languageName: node
   linkType: hard
 
@@ -4064,7 +4078,7 @@ __metadata:
     "@emotion/server": ^11.10.0
     "@mantine/core": 5.10.5
     "@mantine/hooks": 5.10.3
-    "@mantine/next": 5.10.5
+    "@mantine/next": 6.0.0
     "@types/node": 18.14.2
     "@types/react": 18.0.28
     autoprefixer: 10.4.13
