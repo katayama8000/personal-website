@@ -183,9 +183,19 @@ module.exports = {
       lg: "1200px",
       xl: "1400px",
     },
-    extend: {
-      colors: mantineColors,
+    animation: {
+      "rotate-center": "rotate-center 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275)  1 reverse forwards"
     },
+    keyframes: {
+      "rotate-center": {
+        "0%": {
+          transform: "rotate(0)"
+        },
+        to: {
+          transform: "rotate(360deg)"
+        }
+      }
+    }
   },
   plugins: [],
 };

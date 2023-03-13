@@ -72,7 +72,7 @@ const Home: NextPage = () => {
           alt="Picture of the author"
           width={150}
           height={150}
-          className="rounded-full"
+          className="animate-rotate-center rounded-full"
         />
 
         <div className="pt-10 text-3xl font-bold text-white">
