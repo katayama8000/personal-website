@@ -14,3 +14,6 @@ ver4の時は自動でインストールしていた
 ```
 nodeLinker: node-modules
 ```
+
+## animation
+https://tail-animista.vercel.app/play/basic/scale-up/scale-up-center
