@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { Title } from '@component/layout/Title';
+import { RingProgress } from '@mantine/core';
 
 const TITLE_INFOMATION_LIST = [
   {
@@ -59,22 +60,19 @@ const Home: NextPage = () => {
   return (
     <div className="px-4 py-14 sm:p-20">
       <header className="pb-10">
-        {/* <div className="h-[100px] w-[100px] rounded-full bg-green-600"></div> */}
-        {/* <Image
-          src={`/img/icon/icon${Math.floor(Math.random() * 8) + 1}.png`}
-          alt="Picture of the author"
-          width={150}
-          height={150}
-          className="rounded-full"
-        /> */}
-        <Image
-          src={`/img/icon/icon0.png`}
-          alt="Picture of the author"
-          width={150}
-          height={150}
-          className="animate-rotate-center rounded-full"
+        <RingProgress
+          sections={[{ value: 100, color: 'cyan' }]}
+          size={180}
+          label={
+            <Image
+              src={`/img/icon/icon0.png`}
+              alt="Picture of the author"
+              width={150}
+              height={150}
+              className="animate-rotate-center rounded-full"
+            />
+          }
         />
-
         <div className="pt-10 text-3xl font-bold text-white">
           Tatsuhumi Katayama
         </div>
