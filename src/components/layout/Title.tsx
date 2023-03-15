@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { useRouter } from "next/router";
+import React, { FC } from 'react';
+import { useRouter } from 'next/router';
 
 type Props = {
   title: string;
@@ -10,24 +10,18 @@ type Props = {
 
 export const Title: FC<Props> = ({ title, description, url, pageUrl }) => {
   const router = useRouter();
-  const handleWindowOpen = (url: string) => {
-    window.open(url);
-  };
-
-  const changePage = (pageUrl: string) => {
-    router.push(pageUrl);
+  const handleLinkClick = () => {
+    if (url) {
+      window.open(url);
+    } else if (pageUrl) {
+      router.push(pageUrl);
+    }
   };
   return (
     <article className="py-4">
       <span
         className="cursor-pointer text-3xl font-bold text-white hover:underline"
-        onClick={() => {
-          if (url) {
-            handleWindowOpen(url);
-          } else if (pageUrl) {
-            changePage(pageUrl);
-          }
-        }}
+        onClick={handleLinkClick}
       >
         {title}
       </span>

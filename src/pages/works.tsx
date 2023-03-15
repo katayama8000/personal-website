@@ -78,18 +78,20 @@ const Works: NextPage = () => {
           ←{' '}
         </Link>
         <h1 className="py-10 text-3xl font-bold text-white">Works</h1>
-        {WORK_INFOMATION_LIST.map((work) => {
-          return (
-            <Work
-              key={work.name}
-              name={work.name}
-              url={work.url}
-              img={work.img}
-              technologies={work.technologies}
-              description={work.description}
-            />
-          );
-        })}
+        {WORK_INFOMATION_LIST.map(
+          ({ name, url, img, technologies, description }) => {
+            return (
+              <Work
+                key={name}
+                name={name}
+                url={url}
+                img={img}
+                technologies={technologies}
+                description={description}
+              />
+            );
+          }
+        )}
       </div>
     </>
   );

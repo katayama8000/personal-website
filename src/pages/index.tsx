@@ -81,13 +81,13 @@ const Home: NextPage = () => {
         </div>
       </header>
       <hr className="py-10" />
-      {TITLE_INFOMATION_LIST.map((titleInfomation) => (
+      {TITLE_INFOMATION_LIST.map(({ title, description, url, pageUrl }) => (
         <Title
-          key={titleInfomation.title}
-          title={titleInfomation.title}
-          description={titleInfomation.description}
-          url={titleInfomation.url}
-          pageUrl={titleInfomation.pageUrl}
+          key={title}
+          title={title}
+          description={description}
+          url={url}
+          pageUrl={pageUrl}
         />
       ))}
     </div>

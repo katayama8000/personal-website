@@ -1,6 +1,6 @@
-import { FC, useEffect, useState } from "react";
-import { Button, Image, MantineSize } from "@mantine/core";
-import { useMediaQuery } from "src/lib/mantine";
+import { FC, useEffect, useState } from 'react';
+import { Button, Image, MantineSize } from '@mantine/core';
+import { useMediaQuery } from 'src/lib/mantine';
 
 type Props = {
   name: string;
@@ -21,13 +21,8 @@ export const Work: FC<Props> = ({
   technologies,
   description,
 }) => {
-  const largerThanXs = useMediaQuery("xs");
-  const [buttonSize, setButtonSize] = useState<MantineSize | undefined>("sm");
-  useEffect(() => {
-    if (!largerThanXs) {
-      setButtonSize("xs");
-    }
-  }, [largerThanXs]);
+  const largerThanXs = useMediaQuery('xs');
+  const size: MantineSize = largerThanXs ? 'sm' : 'xs';
   return (
     <div>
       <div className="py-2 text-xl font-semibold text-white">{name}</div>
@@ -45,7 +40,7 @@ export const Work: FC<Props> = ({
           return (
             <div key={index}>
               {/* <Avatar src="img/stack/vue.png" alt="it's me" /> */}
-              <Button variant="outline" color={tech.color} size={buttonSize}>
+              <Button variant="outline" color={tech.color} size={size}>
                 {tech.tech}
               </Button>
             </div>

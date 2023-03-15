@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>katayama8000</title>
       </Head>
-      <main className="m-auto max-w-4xl" role="main">
+      <main className="m-auto max-w-4xl">
         <MantineProvider
           withGlobalStyles
           withNormalizeCSS
