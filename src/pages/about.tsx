@@ -69,19 +69,17 @@ const About: NextPage = () => {
         <Grid grow>
           {IMAGES.map((url) => {
             return (
-              <div key={url}>
-                <Grid.Col sm={6}>
-                  <Image
-                    width={imageSize}
-                    height={imageSize}
-                    alt="with wife"
-                    src={url}
-                    radius="lg"
-                    withPlaceholder
-                    className="cursor-pointer"
-                  />
-                </Grid.Col>
-              </div>
+              <Grid.Col sm={6} key={url}>
+                <Image
+                  width={imageSize}
+                  height={imageSize}
+                  alt="with wife"
+                  src={url}
+                  radius="lg"
+                  withPlaceholder
+                  className="cursor-pointer"
+                />
+              </Grid.Col>
             );
           })}
         </Grid>
