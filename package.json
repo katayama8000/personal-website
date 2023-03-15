@@ -14,7 +14,7 @@
     "@mantine/core": "5.10.5",
     "@mantine/hooks": "6.0.1",
     "@mantine/next": "6.0.0",
-    "next": "13.1.6",
+    "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-error-boundary": "3.1.4"
@@ -24,14 +24,14 @@
     "@types/react": "18.0.28",
     "autoprefixer": "10.4.13",
     "concurrently": "7.6.0",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "8.5.0",
     "pathpida": "0.20.1",
     "postcss": "8.4.21",
-    "prettier": "2.8.1",
+    "prettier": "2.8.4",
     "prettier-plugin-tailwindcss": "0.2.4",
-    "tailwindcss": "3.2.6",
+    "tailwindcss": "3.2.7",
     "typescript": "4.9.5"
   },
   "postcss": {
