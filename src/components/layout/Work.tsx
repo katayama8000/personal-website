@@ -39,7 +39,6 @@ export const Work: FC<Props> = ({
         {technologies.map((tech, index) => {
           return (
             <div key={index}>
-              {/* <Avatar src="img/stack/vue.png" alt="it's me" /> */}
               <Button variant="outline" color={tech.color} size={size}>
                 {tech.tech}
               </Button>
