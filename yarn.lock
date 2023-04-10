@@ -245,26 +245,34 @@
   resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-6.0.1.tgz#0b01f445b8b03854b029fd257e810424da30df2c"
   integrity sha512-D3zWNPMrmjBbns0krXCE5FyWNmrKosYqD+J4/yyBrngvN6XMlmqfUr4C6ofndRrpZHxyshEJgVYLvB5h2bioGQ==
 
-"@mantine/next@6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@mantine/next/-/next-6.0.4.tgz#060f2d759362fc42a30d59a2f6c0179253b4d1a4"
-  integrity sha512-/HvAZNe15v8DIjooJ62KKnSPmFlF6Kg9iyFkjTLlPxFIf5/4uCfPPQcIpWAXk7ZfkQSnHbmdNbbizhadBS57qQ==
+"@mantine/next@6.0.6":
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/@mantine/next/-/next-6.0.6.tgz#46b284cfc77764bcf5d6fa5d81707b92dc84982b"
+  integrity sha512-/ZUUPdgmWW5wxn5/lEuDqYzgBE7EJhP2y/cT9QoI2DyEf/drLc20Ccg4dHKv4d9UqH6jWWDXC5mSKArq9oTPhw==
   dependencies:
-    "@mantine/ssr" "6.0.4"
-    "@mantine/styles" "6.0.4"
+    "@mantine/ssr" "6.0.6"
+    "@mantine/styles" "6.0.6"
 
-"@mantine/ssr@6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@mantine/ssr/-/ssr-6.0.4.tgz#a4385385f3a2a0b56f507fbc904a3e1916e62045"
-  integrity sha512-e/ZwBj4+qG0+23MeChCVHUxVeNwplTyvMsqz8JAokaKcebdyuR42YWFbo21cGpulT8lAewd+EmpeKRk3lmZwwg==
+"@mantine/ssr@6.0.6":
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/@mantine/ssr/-/ssr-6.0.6.tgz#7283bd475e96a2a830a64ed1c79948d65148e723"
+  integrity sha512-0XSkO6lKwf36LYB3vCIcaCALei4NsfZ3raK2wmpS7IOV5zF+c5EjoVxIxwd4p93GHR3D/0CW9whQrPHlcoOaOA==
   dependencies:
-    "@mantine/styles" "6.0.4"
+    "@mantine/styles" "6.0.6"
     html-react-parser "1.4.12"
 
 "@mantine/styles@6.0.4":
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/@mantine/styles/-/styles-6.0.4.tgz#c76db96cda89de271f1a1bfcdb328aa093d2cc5b"
   integrity sha512-DbyshlwoCjn3Yw2iMNzo1fv+3TJcZgwjB86JvxcfjJwz6Br5IzsVlJPcK9kcTbzvcN1kMT07y5aK+3pZv7qBFw==
+  dependencies:
+    clsx "1.1.1"
+    csstype "3.0.9"
+
+"@mantine/styles@6.0.6":
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/@mantine/styles/-/styles-6.0.6.tgz#a71c9289bbe7cc863823e3446c76996cc6a5940f"
+  integrity sha512-jNC4uTANTl3Z4B3H+oohJd9i7A542asn6UPUR+xMyjNk2guWSQcLUXe2x3VpL6G71ybNF7UQuZTEyar6OaKW3w==
   dependencies:
     clsx "1.1.1"
     csstype "3.0.9"
