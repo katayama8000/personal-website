@@ -29,7 +29,7 @@ export const Work: FC<Props> = ({ name, url, img, technologies, description }) =
         radius='md'
         withPlaceholder
       />
-      <div className='flex justify-end'>
+       <div className='flex justify-end'>
         {technologies.map((tech, index) => {
           return (
             <div key={index}>
