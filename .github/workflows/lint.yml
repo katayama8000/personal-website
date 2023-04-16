@@ -13,5 +13,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      - name: Formar check
+        run: format:check
       - name: Run lint check
         run: yarn lint
