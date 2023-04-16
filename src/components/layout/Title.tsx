@@ -18,14 +18,11 @@ export const Title: FC<Props> = ({ title, description, url, pageUrl }) => {
     }
   };
   return (
-    <article className="py-4">
-      <span
-        className="cursor-pointer text-3xl font-bold text-white hover:underline"
-        onClick={handleLinkClick}
-      >
+    <article className='py-4'>
+      <span className='cursor-pointer text-3xl font-bold text-white hover:underline' onClick={handleLinkClick}>
         {title}
       </span>
-      <div className="py-2">{description}</div>
+      <div className='py-2'>{description}</div>
     </article>
   );
 };

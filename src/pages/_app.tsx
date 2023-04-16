@@ -11,12 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>katayama8000</title>
       </Head>
-      <main className="m-auto max-w-4xl">
-        <MantineProvider
-          withGlobalStyles
-          withNormalizeCSS
-          theme={{ colorScheme: 'dark' }}
-        >
+      <main className='m-auto max-w-4xl'>
+        <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: 'dark' }}>
           <Component {...pageProps} />
         </MantineProvider>
       </main>
@@ -24,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       {pathname === '/' && (
         <footer>
           <hr />
-          <div className="p-5 text-center">&copy;2022 katayama8000</div>
+          <div className='p-5 text-center'>&copy;2022 katayama8000</div>
         </footer>
       )}
     </>

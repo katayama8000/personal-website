@@ -14,32 +14,26 @@ const handleWindowOpen = (url: string) => {
   window.open(url);
 };
 
-export const Work: FC<Props> = ({
-  name,
-  url,
-  img,
-  technologies,
-  description,
-}) => {
+export const Work: FC<Props> = ({ name, url, img, technologies, description }) => {
   const largerThanXs = useMediaQuery('xs');
   const size: MantineSize = largerThanXs ? 'sm' : 'xs';
   return (
     <div>
-      <div className="py-2 text-xl font-semibold text-white">{name}</div>
-      <div className="py-3">{description}</div>
+      <div className='py-2 text-xl font-semibold text-white'>{name}</div>
+      <div className='py-3'>{description}</div>
       <Image
         src={img}
         alt={name}
-        className="cursor-pointer shadow-md hover:opacity-60"
+        className='cursor-pointer shadow-md hover:opacity-60'
         onClick={() => handleWindowOpen(url)}
-        radius="md"
+        radius='md'
         withPlaceholder
       />
-      <div className="flex justify-end">
+      <div className='flex justify-end'>
         {technologies.map((tech, index) => {
           return (
             <div key={index}>
-              <Button variant="outline" color={tech.color} size={size}>
+              <Button variant='outline' color={tech.color} size={size}>
                 {tech.tech}
               </Button>
             </div>

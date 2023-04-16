@@ -61,8 +61,7 @@ const WORK_INFOMATION_LIST = [
       { tech: 'TypeScript', color: 'indigo' },
       { tech: 'supabase', color: 'teal' },
     ],
-    description:
-      'This is not finished. I make this at another repository. Because My company use this app.',
+    description: 'This is not finished. I make this at another repository. Because My company use this app.',
   },
 ];
 
@@ -72,26 +71,17 @@ const Works: NextPage = () => {
       <Head>
         <title>works</title>
       </Head>
-      <div className="px-4 py-14 sm:p-20">
-        <Link href="/" className="text-5xl">
+      <div className='px-4 py-14 sm:p-20'>
+        <Link href='/' className='text-5xl'>
           {' '}
           ←{' '}
         </Link>
-        <h1 className="py-10 text-3xl font-bold text-white">Works</h1>
-        {WORK_INFOMATION_LIST.map(
-          ({ name, url, img, technologies, description }) => {
-            return (
-              <Work
-                key={name}
-                name={name}
-                url={url}
-                img={img}
-                technologies={technologies}
-                description={description}
-              />
-            );
-          }
-        )}
+        <h1 className='py-10 text-3xl font-bold text-white'>Works</h1>
+        {WORK_INFOMATION_LIST.map(({ name, url, img, technologies, description }) => {
+          return (
+            <Work key={name} name={name} url={url} img={img} technologies={technologies} description={description} />
+          );
+        })}
       </div>
     </>
   );
