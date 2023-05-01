@@ -38,8 +38,7 @@ const About: NextPage = () => {
       </Head>
       <div className='px-2 py-14  sm:p-20'>
         <Link href='/' className='text-5xl'>
-          {' '}
-          ←{' '}
+          ←
         </Link>
         <h1 className='py-10 text-3xl font-bold text-white'>About</h1>
         <div>
@@ -66,7 +65,7 @@ const About: NextPage = () => {
         <Grid grow>
           {IMAGES.map((url) => {
             return (
-              <Grid.Col sm={6} key={url}>
+              <Grid.Col span={3} key={url}>
                 <Image
                   width={imageSize}
                   height={imageSize}
@@ -86,19 +85,17 @@ const About: NextPage = () => {
         <Grid grow>
           {AUSTRALIA.map((url) => {
             return (
-              <div key={url}>
-                <Grid.Col span={3}>
-                  <Image
-                    width={imageSize}
-                    height={imageSize}
-                    alt='with wife'
-                    src={url}
-                    radius='lg'
-                    withPlaceholder
-                    className='cursor-pointer'
-                  />
-                </Grid.Col>
-              </div>
+              <Grid.Col span={3} key={url}>
+                <Image
+                  width={imageSize}
+                  height={imageSize}
+                  alt='with wife'
+                  src={url}
+                  radius='lg'
+                  withPlaceholder
+                  className='cursor-pointer'
+                />
+              </Grid.Col>
             );
           })}
         </Grid>
