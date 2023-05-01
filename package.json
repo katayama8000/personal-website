@@ -9,7 +9,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\"",
-    "format:check": "prettier --check --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\""
+    "format:check": "prettier --check --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -30,6 +31,7 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "8.5.0",
+    "husky": "^8.0.3",
     "pathpida": "0.20.1",
     "postcss": "8.4.21",
     "prettier": "2.8.5",
