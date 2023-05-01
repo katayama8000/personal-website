@@ -12,7 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         　　　　　　　　　　　<title>katayama8000</title>
       </Head>
       <main className='m-auto max-w-4xl'>
-      　　　　　　　　　　　  <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: 'dark' }}>
+        　　　　　　　　　　　{' '}
+        <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: 'dark' }}>
           <Component {...pageProps} />
         </MantineProvider>
       </main>
