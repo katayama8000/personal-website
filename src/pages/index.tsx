@@ -19,11 +19,11 @@ const TITLE_INFOMATION_LIST = [
     description: 'I created a React community on LINE',
     url: 'https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default',
   },
-  // {
-  //   title: 'Qiita',
-  //   description: 'Teck blog',
-  //   url: 'https://qiita.com/t_109609akg',
-  // },
+  {
+    title: 'Scrapbox',
+    description: 'Diary blog',
+    url: 'https://scrapbox.io/katayama8000/',
+  },
   {
     title: 'Zenn',
     description: 'Teck blog',
