@@ -17,3 +17,6 @@ nodeLinker: node-modules
 
 ## animation
 https://tail-animista.vercel.app/play/basic/scale-up/scale-up-center
+
+## deploy
+- [netlify](https://app.netlify.com/sites/sage-choux-bde4e1/overview)
