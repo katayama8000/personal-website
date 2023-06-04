@@ -4,9 +4,6 @@
 ```
 yarn add  @emotion/server @emotion/react
 ```
-ver4の時は自動でインストールしていた
-
-- [yarn upgrade](https://qiita.com/teinen_qiita/items/18ca1fb433914e09c9e4)
 
 ## yarn 3.3.1
 - .yarnファイルが生成される
@@ -20,3 +17,4 @@ https://tail-animista.vercel.app/play/basic/scale-up/scale-up-center
 
 ## deploy
 - [netlify](https://app.netlify.com/sites/sage-choux-bde4e1/overview)
+- https://sage-choux-bde4e1.netlify.app/
