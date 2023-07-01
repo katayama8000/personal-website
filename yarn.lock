@@ -270,14 +270,14 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@mantine/core@6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@mantine/core/-/core-6.0.2.tgz#205babfdbb306f4959a2ffdc928a74f7171da087"
-  integrity sha512-FP/qaMBzh2dDrZIFSAJB3vogWK3U8+nnwImKa+/ceo7EJLeauLNAssaoWn2TVnA6x5mIZnlPwkDtVqI8Q+K9Ww==
+"@mantine/core@6.0.15":
+  version "6.0.15"
+  resolved "https://registry.yarnpkg.com/@mantine/core/-/core-6.0.15.tgz#6956533f6163ef3b715dd84746e8096a973b6796"
+  integrity sha512-CN2UV2RXumxac75cWgUPMcHiE36T4ciIpFf20JwpazshnwFNu7scvy6GJDwUouf0zTBLnPMAD1S/B4mIRc3aQw==
   dependencies:
     "@floating-ui/react" "^0.19.1"
-    "@mantine/styles" "6.0.2"
-    "@mantine/utils" "6.0.2"
+    "@mantine/styles" "6.0.15"
+    "@mantine/utils" "6.0.15"
     "@radix-ui/react-scroll-area" "1.0.2"
     react-remove-scroll "^2.5.5"
     react-textarea-autosize "8.3.4"
@@ -303,10 +303,10 @@
     "@mantine/styles" "6.0.9"
     html-react-parser "1.4.12"
 
-"@mantine/styles@6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@mantine/styles/-/styles-6.0.2.tgz#893b9d1e43364f4c45e99e84428a615ed130a86c"
-  integrity sha512-py5yWzCPSYAv/4NwQ+dHaei0Rmk8kQ/ls5i3u28y6U+fCoutRhlCPJKjPfOWQzFpSRS0oGPdChFdg6zn4r8YIA==
+"@mantine/styles@6.0.15":
+  version "6.0.15"
+  resolved "https://registry.yarnpkg.com/@mantine/styles/-/styles-6.0.15.tgz#474721fb5acab6f7ac9aed2d52b77e9571708ce5"
+  integrity sha512-lOcEshBVbaN55gqsaiRPDY3///gfE+0o13ePp5PbCIA1sTKCvHz9aojHxXIICQV0ua9CXyleHzn5G0Ypw21/NQ==
   dependencies:
     clsx "1.1.1"
     csstype "3.0.9"
@@ -319,10 +319,10 @@
     clsx "1.1.1"
     csstype "3.0.9"
 
-"@mantine/utils@6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-6.0.2.tgz#06da9dfb390a026e005f7e2712a3a30373a2b4c3"
-  integrity sha512-fx+cmkb8PMpkr65nUs8YgaXFJbtNY+ybSXDfBxwFAWMTLAocbNo7vjkSvPWZVS1O2szPK/s4Rqdw0W76dyG4+w==
+"@mantine/utils@6.0.15":
+  version "6.0.15"
+  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-6.0.15.tgz#d4144221f9406aece12b979bed5888da50d86771"
+  integrity sha512-iVaobFQTCQWG6SRi3im0/nONKCtGRPobG7bXn9GiIT96E4t7uTPglQpo/ZktDrF1XCL8CO/HoQmks4A2iXuMFw==
 
 "@next/env@13.2.4":
   version "13.2.4"
