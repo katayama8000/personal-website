@@ -2,7 +2,7 @@ import { useViewportSize as useViewportSizeOriginal } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
 
 export const useViewportSize = () => {
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState<boolean>(false);
   const viewportSize = useViewportSizeOriginal();
 
   useEffect(() => {

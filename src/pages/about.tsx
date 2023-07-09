@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Grid, Image } from '@mantine/core';
+import { Container, Grid, Image, Text, Title } from '@mantine/core';
 import { useMediaQuery } from 'src/lib/mantine';
 import { NextPage } from 'next/types';
 import Head from 'next/head';
@@ -25,7 +25,7 @@ const AUSTRALIA = [
 
 const About: NextPage = () => {
   const largerThanXs = useMediaQuery('xs');
-  const [imageSize, setImageSize] = useState(172);
+  const [imageSize, setImageSize] = useState<number>(172);
   useEffect(() => {
     if (!largerThanXs) {
       setImageSize(152);
@@ -36,19 +36,23 @@ const About: NextPage = () => {
       <Head>
         <title>this is about me</title>
       </Head>
-      <div className='px-2 py-14  sm:p-20'>
+      <Container className='px-2 py-14  sm:p-20'>
         <Link href='/' className='text-5xl'>
           ←
         </Link>
-        <h1 className='py-10 text-3xl font-bold text-white'>About</h1>
-        <div>
+        <Title order={1} my={30} color='white' size={30}>
+          About
+        </Title>
+        <Text>
           I am an engineer based in Nagoya, Japan with two years of engineering experience. The programming languages I
           have used at work include C, JavaScript, and TypeScript.
           <br />
           Additionally, I have experience with various frameworks and libraries such as React.js, Vue.js, and Angular.
-        </div>
-        <h1 className='py-10 text-xl font-bold text-white'>Outside of work</h1>
-        <div className='pb-10'>
+        </Text>
+        <Title order={2} my={30} color='white' size={24}>
+          Outside of work
+        </Title>
+        <Text className='pb-10'>
           I got married two years ago, and all I want is to enjoy life with my wife. She has gained many followers on
           <span
             onClick={() => {
@@ -61,7 +65,7 @@ const About: NextPage = () => {
           due to her attractive personality.
           <br />
           We both love music and movies, which brought us together.
-        </div>
+        </Text>
         <Grid grow>
           {IMAGES.map((url) => {
             return (
@@ -79,9 +83,9 @@ const About: NextPage = () => {
             );
           })}
         </Grid>
-        <div className='pt-20 pb-10'>
+        <Text mt={80} mb={40}>
           After graduating from high school, I lived in Australia and now I would like to visit the country again.
-        </div>
+        </Text>
         <Grid grow>
           {AUSTRALIA.map((url) => {
             return (
@@ -99,9 +103,11 @@ const About: NextPage = () => {
             );
           })}
         </Grid>
-        <h1 className='pt-20 text-xl font-bold text-white'>Contact</h1>
-        <div className='pt-5'>Contact me at tattu.0310@gmail.com.</div>
-      </div>
+        <Title order={2} mt={40} color='white' size={24}>
+          Contact
+        </Title>
+        <Text mt={4}>Contact me at tattu.0310@gmail.com.</Text>
+      </Container>
     </>
   );
 };
