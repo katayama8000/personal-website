@@ -24,7 +24,7 @@
     "react-error-boundary": "4.0.4"
   },
   "devDependencies": {
-    "@types/node": "20.2.5",
+    "@types/node": "20.8.10",
     "@types/react": "18.2.21",
     "autoprefixer": "10.4.14",
     "concurrently": "7.6.0",
