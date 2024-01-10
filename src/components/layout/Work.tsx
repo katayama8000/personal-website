@@ -5,12 +5,12 @@ import { useMediaQuery } from 'src/lib/mantine';
 type Props = {
   name: string;
   url: string;
-  img: string;
+  img?: string;
   technologies: { tech: string; color: string }[];
   description: string;
 };
 
-const handleWindowOpen = (url: string) => {
+const handleWindowOpen = (url: string): void => {
   window.open(url);
 };
 
@@ -21,14 +21,20 @@ export const Work: FC<Props> = ({ name, url, img, technologies, description }) =
     <div>
       <div className='py-2 text-xl font-semibold text-white'>{name}</div>
       <div className='py-3'>{description}</div>
-      <Image
-        src={img}
-        alt={name}
-        className='cursor-pointer shadow-md hover:opacity-60'
-        onClick={() => handleWindowOpen(url)}
-        radius='md'
-        withPlaceholder
-      />
+      {img ? (
+        <Image
+          src={img}
+          alt={name}
+          className='cursor-pointer shadow-md hover:opacity-60'
+          onClick={() => handleWindowOpen(url)}
+          radius='md'
+          withPlaceholder
+        />
+      ) : (
+        <a href={url} target='_blank' rel='noopener noreferrer'>
+          {url}
+        </a>
+      )}
       <div className='flex justify-end'>
         {technologies.map((tech, index) => {
           return (
