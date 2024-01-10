@@ -1,8 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "concurrently npm:dev:*",
-    "dev:next": "next dev",
+    "dev": "next dev",
     "dev:path": "pathpida --ignorePath .gitignore --watch",
     "build": "pathpida --ignorePath .gitignore && next build",
     "start": "next start",

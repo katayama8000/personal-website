@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { Work } from '@component/layout/Work';
 import Head from 'next/head';
+import { Box } from '@mantine/core';
 
 const WORK_INFOMATION_LIST = [
   {
@@ -63,6 +64,16 @@ const WORK_INFOMATION_LIST = [
     ],
     description: 'This is not finished. I make this at another repository. Because My company use this app.',
   },
+  {
+    name: 'expo-push-notification-client-rust',
+    url: 'https://github.com/katayama8000/expo-push-notification-client-rust',
+    technologies: [
+      { tech: 'Rust', color: 'orange' },
+      { tech: 'expo', color: 'pink' },
+    ],
+    description:
+      'expo push notification client for rust. There is no official client for expo push notification. So I made it.',
+  },
 ];
 
 const Works: NextPage = () => {
@@ -79,7 +90,9 @@ const Works: NextPage = () => {
         <h1 className='py-10 text-3xl font-bold text-white'>Works</h1>
         {WORK_INFOMATION_LIST.map(({ name, url, img, technologies, description }) => {
           return (
-            <Work key={name} name={name} url={url} img={img} technologies={technologies} description={description} />
+            <Box my={20}>
+              <Work key={name} name={name} url={url} img={img} technologies={technologies} description={description} />
+            </Box>
           );
         })}
       </div>

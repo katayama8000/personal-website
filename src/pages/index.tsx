@@ -20,11 +20,6 @@ const TITLE_INFOMATION_LIST = [
     url: 'https://line.me/ti/g2/qe5B4jkfc1Uf1IxhB1DsgSD6-ez5aSAlGEEpTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default',
   },
   {
-    title: 'Scrapbox',
-    description: 'Diary blog',
-    url: 'https://scrapbox.io/katayama8000/',
-  },
-  {
     title: 'Zenn',
     description: 'Teck blog',
     url: 'https://zenn.dev/tattu',
@@ -35,17 +30,12 @@ const TITLE_INFOMATION_LIST = [
     url: 'https://note.com/with_wife',
   },
   {
-    title: 'FamilyBlog',
-    description: 'My family blog',
-    url: 'https://nimanimoney.com',
-  },
-  {
     title: 'Works',
     description: 'What I have build',
     pageUrl: 'works',
   },
   {
-    title: 'Git hub',
+    title: 'GitHub',
     description: 'I try to write code everyday',
     url: 'https://github.com/katayama8000',
   },
