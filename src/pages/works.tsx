@@ -90,8 +90,8 @@ const Works: NextPage = () => {
         <h1 className='py-10 text-3xl font-bold text-white'>Works</h1>
         {WORK_INFOMATION_LIST.map(({ name, url, img, technologies, description }) => {
           return (
-            <Box my={20}>
-              <Work key={name} name={name} url={url} img={img} technologies={technologies} description={description} />
+            <Box my={20} key={url}>
+              <Work name={name} url={url} img={img} technologies={technologies} description={description} />
             </Box>
           );
         })}
