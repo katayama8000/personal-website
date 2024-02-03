@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>katayama8000</title>
+        <link rel='icon' type='image/png' href='/img/icon/icon0.png' />
       </Head>
       <main className='m-auto max-w-4xl'>
         <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: 'dark' }}>

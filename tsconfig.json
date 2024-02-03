@@ -18,11 +18,9 @@
     "paths": {
       "@component/*": ["./src/components/*"],
       "@pages/*": ["./src/pages/*"],
-      "@hooks/*": ["./src/hooks/*"]
-    }
+      "@hooks/*": ["./src/hooks/*"],
+    },
   },
-  // コンパイラが処理するファイルを指定
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  // コンパイラが処理しないファイルを指定
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }

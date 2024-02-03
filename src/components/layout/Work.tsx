@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { Button, Image, MantineSize } from '@mantine/core';
 import { useMediaQuery } from 'src/lib/mantine';
 
