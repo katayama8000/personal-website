@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel='icon' type='image/png' href='/img/icon/icon0.png' />
       </Head>
       <main className='m-auto max-w-4xl'>
+        <Analytics />
         <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: 'dark' }}>
           <Component {...pageProps} />
         </MantineProvider>
