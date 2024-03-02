@@ -4,6 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <main className='m-auto max-w-4xl'>
         <Analytics />
+        <SpeedInsights />
         <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: 'dark' }}>
           <Component {...pageProps} />
         </MantineProvider>
