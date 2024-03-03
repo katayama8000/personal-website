@@ -28,7 +28,6 @@ export const Work: FC<Props> = ({ name, url, img, technologies, description }) =
           className='cursor-pointer shadow-md hover:opacity-60'
           onClick={() => handleWindowOpen(url)}
           radius='md'
-          withPlaceholder
         />
       ) : (
         <a href={url} target='_blank' rel='noopener noreferrer'>

@@ -4,75 +4,75 @@ import { Work } from '@component/layout/Work';
 import Head from 'next/head';
 import { Box } from '@mantine/core';
 
-const WORK_INFOMATION_LIST = [
+const WORK_INFORMATION_LIST = [
   {
     name: 'Nftotaku',
     url: 'https://nftotaku.xyz/',
     img: '/img/work/nft.png',
     technologies: [
-      { tech: 'React.js', color: 'default' },
+      { tech: 'React.js', color: 'indigo' },
       { tech: 'Next.js', color: 'gray' },
-      { tech: 'TypeScript', color: 'indigo' },
+      { tech: 'TypeScript', color: 'violet' },
       { tech: 'supabase', color: 'teal' },
     ],
-    description: 'Welcome to our Nft world.',
+    description: 'Welcome to our NFT world.',
   },
   {
-    name: 'invoice',
+    name: 'Invoice',
     url: 'https://invoice-app-d6e30.web.app/',
     img: '/img/work/invoice.png',
     technologies: [
       { tech: 'Vue.js', color: 'green' },
-      { tech: 'firebase', color: 'yellow' },
+      { tech: 'Firebase', color: 'yellow' },
     ],
-
-    description: 'web invoice app.',
+    description: 'A web-based invoice application.',
   },
   {
-    name: 'memory with music',
+    name: 'Memory with Music',
     url: 'https://memory-with-music.vercel.app/',
     img: '/img/work/music.png',
     technologies: [
-      { tech: 'React.js', color: 'default' },
+      { tech: 'React.js', color: 'indigo' },
       { tech: 'Next.js', color: 'gray' },
-      { tech: 'TypeScript', color: 'indigo' },
+      { tech: 'TypeScript', color: 'violet' },
       { tech: 'supabase', color: 'teal' },
     ],
-    description: 'music is good medicine.',
+    description: 'Music is good medicine.',
   },
   {
-    name: 'snake game react',
+    name: 'Snake Game React',
     url: 'https://snake-game-react-lilac.vercel.app/',
     img: '/img/work/snake.png',
     technologies: [
-      { tech: 'React.js', color: 'default' },
+      { tech: 'React.js', color: 'indigo' },
       { tech: 'Next.js', color: 'gray' },
-      { tech: 'TypeScript', color: 'indigo' },
-      { tech: 'canvas', color: 'red' },
+      { tech: 'TypeScript', color: 'violet' },
+      { tech: 'Canvas', color: 'red' },
     ],
-    description: 'This is the first game I made.',
+    description: 'This is the first game I created.',
   },
   {
     name: 'Web-Expenses',
     url: 'https://web-expenses-reactjs.vercel.app/',
     img: '/img/work/web.png',
     technologies: [
-      { tech: 'React.js', color: 'default' },
+      { tech: 'React.js', color: 'indigo' },
       { tech: 'Next.js', color: 'gray' },
-      { tech: 'TypeScript', color: 'indigo' },
+      { tech: 'TypeScript', color: 'violet' },
       { tech: 'supabase', color: 'teal' },
     ],
-    description: 'This is not finished. I make this at another repository. Because My company use this app.',
+    description:
+      'This project is still in progress. I developed it in another repository because my company uses this app.',
   },
   {
-    name: 'expo-push-notification-client-rust',
+    name: 'Expo Push Notification Client Rust',
     url: 'https://github.com/katayama8000/expo-push-notification-client-rust',
     technologies: [
       { tech: 'Rust', color: 'orange' },
-      { tech: 'expo', color: 'pink' },
+      { tech: 'Expo', color: 'pink' },
     ],
     description:
-      'expo push notification client for rust. There is no official client for expo push notification. So I made it.',
+      'Expo push notification client for Rust. This client is officially recognized by Expo and listed in their official documentation.',
   },
 ];
 
@@ -80,21 +80,18 @@ const Works: NextPage = () => {
   return (
     <>
       <Head>
-        <title>works</title>
+        <title>Works</title>
       </Head>
       <div className='px-4 py-14 sm:p-20'>
         <Link href='/' className='text-5xl'>
-          {' '}
-          ←{' '}
+          ←
         </Link>
         <h1 className='py-10 text-3xl font-bold text-white'>Works</h1>
-        {WORK_INFOMATION_LIST.map(({ name, url, img, technologies, description }) => {
-          return (
-            <Box my={20} key={url}>
-              <Work name={name} url={url} img={img} technologies={technologies} description={description} />
-            </Box>
-          );
-        })}
+        {WORK_INFORMATION_LIST.map(({ name, url, img, technologies, description }) => (
+          <Box my={20} key={url}>
+            <Work name={name} url={url} img={img} technologies={technologies} description={description} />
+          </Box>
+        ))}
       </div>
     </>
   );
