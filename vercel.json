@@ -1,5 +1,7 @@
 {
   "github": {
     "silent": true
-  }
+  },
+  "buildCommand": "next build",
+  "framework": "nextjs"
 }

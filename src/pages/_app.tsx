@@ -1,3 +1,4 @@
+import '@mantine/core/styles.css';
 import 'src/lib/tailwind.css';
 import type { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
@@ -17,11 +18,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main className='m-auto max-w-4xl'>
         <Analytics />
         <SpeedInsights />
-        <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: 'dark' }}>
+        <MantineProvider defaultColorScheme='dark'>
           <Component {...pageProps} />
         </MantineProvider>
       </main>
-
       {pathname === '/' && (
         <footer>
           <hr />
