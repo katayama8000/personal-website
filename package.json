@@ -10,7 +10,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "prettier --write"
+    "*.{ts,tsx}": "yarn format"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
