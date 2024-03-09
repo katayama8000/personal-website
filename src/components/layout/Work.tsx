@@ -15,9 +15,7 @@ const handleWindowOpen = (url: string): void => {
 };
 
 export const Work: FC<Props> = ({ name, url, img, technologies, description }) => {
-  const hoverClass = url ? 'cursor-pointer shadow-md hover:opacity-60' : '';
-  const largerThanXs = useMediaQuery('xs');
-  const size: MantineSize = largerThanXs ? 'sm' : 'xs';
+  const size: MantineSize = useMediaQuery('xs') ? 'sm' : 'xs';
   return (
     <div>
       <div className='py-2 text-xl font-semibold text-white'>{name}</div>
@@ -25,7 +23,7 @@ export const Work: FC<Props> = ({ name, url, img, technologies, description }) =
       <Image
         src={img}
         alt={name}
-        className={hoverClass}
+        className={url && 'cursor-pointer shadow-md hover:opacity-60'}
         onClick={() => {
           if (url) handleWindowOpen(url);
         }}
