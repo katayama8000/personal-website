@@ -4,8 +4,8 @@ import { useMediaQuery } from 'src/lib/mantine';
 
 type Props = {
   name: string;
-  url: string;
-  img?: string;
+  url?: string;
+  img: string;
   technologies: { tech: string; color: string }[];
   description: string;
 };
@@ -15,25 +15,20 @@ const handleWindowOpen = (url: string): void => {
 };
 
 export const Work: FC<Props> = ({ name, url, img, technologies, description }) => {
-  const largerThanXs = useMediaQuery('xs');
-  const size: MantineSize = largerThanXs ? 'sm' : 'xs';
+  const size: MantineSize = useMediaQuery('xs') ? 'sm' : 'xs';
   return (
     <div>
       <div className='py-2 text-xl font-semibold text-white'>{name}</div>
       <div className='py-3'>{description}</div>
-      {img ? (
-        <Image
-          src={img}
-          alt={name}
-          className='cursor-pointer shadow-md hover:opacity-60'
-          onClick={() => handleWindowOpen(url)}
-          radius='md'
-        />
-      ) : (
-        <a href={url} target='_blank' rel='noopener noreferrer'>
-          {url}
-        </a>
-      )}
+      <Image
+        src={img}
+        alt={name}
+        className={url && 'cursor-pointer shadow-md hover:opacity-60'}
+        onClick={() => {
+          if (url) handleWindowOpen(url);
+        }}
+        radius='md'
+      />
       <div className='flex justify-end'>
         {technologies.map((tech, index) => {
           return (
