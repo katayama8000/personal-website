@@ -6,11 +6,21 @@ import { Box } from '@mantine/core';
 
 const WORK_INFORMATION_LIST = [
   {
+    name: 'Expo Push Notification Client Rust',
+    url: 'https://github.com/katayama8000/expo-push-notification-client-rust',
+    img: '/img/work/expo.png',
+    technologies: [
+      { tech: 'Rust', color: 'orange' },
+      { tech: 'Expo', color: 'pink' },
+    ],
+    description:
+      'Expo push notification client for Rust. This client is officially recognized by Expo and listed in their official documentation.',
+  },
+  {
     name: 'Nftotaku',
     url: 'https://nftotaku.xyz/',
     img: '/img/work/nft.png',
     technologies: [
-      { tech: 'React.js', color: 'indigo' },
       { tech: 'Next.js', color: 'gray' },
       { tech: 'TypeScript', color: 'violet' },
       { tech: 'supabase', color: 'teal' },
@@ -19,7 +29,7 @@ const WORK_INFORMATION_LIST = [
   },
   {
     name: 'Invoice',
-    url: 'https://invoice-app-d6e30.web.app/',
+    // url: 'https://invoice-app-d6e30.web.app/',
     img: '/img/work/invoice.png',
     technologies: [
       { tech: 'Vue.js', color: 'green' },
@@ -29,10 +39,9 @@ const WORK_INFORMATION_LIST = [
   },
   {
     name: 'Memory with Music',
-    url: 'https://memory-with-music.vercel.app/',
+    // url: 'https://memory-with-music.vercel.app/',
     img: '/img/work/music.png',
     technologies: [
-      { tech: 'React.js', color: 'indigo' },
       { tech: 'Next.js', color: 'gray' },
       { tech: 'TypeScript', color: 'violet' },
       { tech: 'supabase', color: 'teal' },
@@ -41,10 +50,9 @@ const WORK_INFORMATION_LIST = [
   },
   {
     name: 'Snake Game React',
-    url: 'https://snake-game-react-lilac.vercel.app/',
+    // url: 'https://snake-game-react-lilac.vercel.app/',
     img: '/img/work/snake.png',
     technologies: [
-      { tech: 'React.js', color: 'indigo' },
       { tech: 'Next.js', color: 'gray' },
       { tech: 'TypeScript', color: 'violet' },
       { tech: 'Canvas', color: 'red' },
@@ -53,26 +61,15 @@ const WORK_INFORMATION_LIST = [
   },
   {
     name: 'Web-Expenses',
-    url: 'https://web-expenses-reactjs.vercel.app/',
+    // url: 'https://web-expenses-reactjs.vercel.app/',
     img: '/img/work/web.png',
     technologies: [
-      { tech: 'React.js', color: 'indigo' },
       { tech: 'Next.js', color: 'gray' },
       { tech: 'TypeScript', color: 'violet' },
       { tech: 'supabase', color: 'teal' },
     ],
     description:
       'This project is still in progress. I developed it in another repository because my company uses this app.',
-  },
-  {
-    name: 'Expo Push Notification Client Rust',
-    url: 'https://github.com/katayama8000/expo-push-notification-client-rust',
-    technologies: [
-      { tech: 'Rust', color: 'orange' },
-      { tech: 'Expo', color: 'pink' },
-    ],
-    description:
-      'Expo push notification client for Rust. This client is officially recognized by Expo and listed in their official documentation.',
   },
 ];
 

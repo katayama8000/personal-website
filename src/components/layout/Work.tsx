@@ -4,7 +4,7 @@ import { useMediaQuery } from 'src/lib/mantine';
 
 type Props = {
   name: string;
-  url: string;
+  url?: string;
   img?: string;
   technologies: { tech: string; color: string }[];
   description: string;
@@ -26,7 +26,9 @@ export const Work: FC<Props> = ({ name, url, img, technologies, description }) =
           src={img}
           alt={name}
           className='cursor-pointer shadow-md hover:opacity-60'
-          onClick={() => handleWindowOpen(url)}
+          onClick={() => {
+            if (url) handleWindowOpen(url);
+          }}
           radius='md'
         />
       ) : (
