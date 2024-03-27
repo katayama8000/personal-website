@@ -9,13 +9,9 @@ type Props = {
 };
 
 export const Title: FC<Props> = ({ title, description, url, pageUrl }) => {
-  const router = useRouter();
+  const { push } = useRouter();
   const handleLinkClick = () => {
-    if (url) {
-      window.open(url);
-    } else if (pageUrl) {
-      router.push(pageUrl);
-    }
+    url ? window.open(url) : pageUrl ? push(pageUrl) : null;
   };
   return (
     <article className='py-4'>
