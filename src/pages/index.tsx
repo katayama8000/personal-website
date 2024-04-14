@@ -64,7 +64,7 @@ const Home: NextPage = () => {
               alt='Picture of the author'
               width={150}
               height={150}
-              className='animate-rotate-center rounded-full'
+              className='rounded-full'
             />
           }
         />
