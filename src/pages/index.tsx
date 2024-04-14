@@ -5,9 +5,19 @@ import { RingProgress } from '@mantine/core';
 
 const TITLE_INFOMATION_LIST = [
   {
+    title: 'GitHub',
+    description: 'I try to write code everyday',
+    url: 'https://github.com/katayama8000',
+  },
+  {
     title: 'About',
     description: 'Brief introduction about me',
     pageUrl: 'about',
+  },
+  {
+    title: 'Works',
+    description: 'What I have build',
+    pageUrl: 'works',
   },
   {
     title: 'GohanDAO',
@@ -30,14 +40,9 @@ const TITLE_INFOMATION_LIST = [
     url: 'https://note.com/with_wife',
   },
   {
-    title: 'Works',
-    description: 'What I have build',
-    pageUrl: 'works',
-  },
-  {
-    title: 'GitHub',
-    description: 'I try to write code everyday',
-    url: 'https://github.com/katayama8000',
+    title: 'Scrapbox',
+    description: 'Daily note',
+    url: 'https://scrapbox.io/katayama8000/',
   },
   {
     title: 'Contact',
