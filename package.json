@@ -21,7 +21,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "dayjs": "^1.11.10",
-    "next": "^14.1.0",
+    "next": "^14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.12"
