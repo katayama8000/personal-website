@@ -60,7 +60,7 @@ const Home: NextPage = () => {
           size={180}
           label={
             <Image
-              src={`/img/icon/icon0.png`}
+              src={'/img/icon/icon0.png'}
               alt='Picture of the author'
               width={150}
               height={150}
