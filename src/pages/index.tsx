@@ -37,7 +37,7 @@ const TITLE_INFOMATION_LIST = [
   {
     title: 'Note',
     description: 'Anything blog',
-    url: 'https://note.com/with_wife',
+    url: 'https://note.com/katayama8000',
   },
   {
     title: 'Scrapbox',
