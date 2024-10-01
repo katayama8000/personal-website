@@ -27,7 +27,7 @@
     "react-error-boundary": "^4.0.12"
   },
   "devDependencies": {
-    "@types/node": "^22.0.2",
+    "@types/node": "^22.7.4",
     "@types/react": "^18.3.10",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.57.1",
