@@ -68,7 +68,7 @@ const Home: NextPage = () => {
             />
           }
         />
-        <div className='pt-10 text-3xl font-bold text-white'>Tatsuhumi Katayama</div>
+        <div className='pt-10 text-3xl font-bold text-white'>Tatsufumi Katayama</div>
         <div className='pt-4 font-bold'>I am a engineer based in Nagoya/Japan.</div>
       </header>
       <hr className='py-10' />
