@@ -7,7 +7,7 @@
     "lint:fix": "next lint --fix",
     "format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\"",
     "format:check": "prettier --check --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\"",
-    "prepare": "husky"
+    "prepare": "husky && husky install"
   },
   "lint-staged": {
     "*.{ts,tsx}": "yarn format"
@@ -33,7 +33,7 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.0.2",
     "eslint-config-prettier": "^9.1.0",
-    "husky": "^9.1.6",
+    "husky": "^8.0.0",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
