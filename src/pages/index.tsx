@@ -65,6 +65,7 @@ const Home: NextPage = () => {
               width={150}
               height={150}
               className='rounded-full'
+              priority={true}
             />
           }
         />
