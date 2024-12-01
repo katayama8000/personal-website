@@ -12,7 +12,7 @@
     "*.{ts,tsx}": "yarn format"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
+    "@emotion/react": "^11.13.5",
     "@emotion/server": "^11.11.0",
     "@mantine/core": "^7.6.1",
     "@mantine/hooks": "^7.6.1",
