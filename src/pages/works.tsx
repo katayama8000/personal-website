@@ -74,9 +74,9 @@ const WORK_INFORMATION_LIST = [
 ];
 
 const Works: NextPage = () => {
-  const router = useRouter();
+  const { push } = useRouter();
   const handleLinkClick = (url: string) => {
-    router.push(url);
+    push(url);
   };
 
   return (
@@ -85,9 +85,9 @@ const Works: NextPage = () => {
         <title>Works</title>
       </Head>
       <div className='px-4 py-14 sm:p-20'>
-        <span onClick={() => handleLinkClick('/')} className='text-5xl cursor-pointer'>
+        <button onClick={() => handleLinkClick('/')} className='text-5xl cursor-pointer' type='button'>
           ←
-        </span>
+        </button>
         <h1 className='py-10 text-3xl font-bold text-white'>Works</h1>
         {WORK_INFORMATION_LIST.map(({ name, url, img, technologies, description }) => (
           <Box my={20} key={url}>
