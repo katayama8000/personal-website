@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { Work } from '@component/layout/Work';
 import Head from 'next/head';
-import { Box } from '@mantine/core';
+import { Box } from '@shadcn/ui';
 
 const WORK_INFORMATION_LIST = [
   {

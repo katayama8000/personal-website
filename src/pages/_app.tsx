@@ -1,7 +1,6 @@
-import '@mantine/core/styles.css';
 import 'src/lib/tailwind.css';
 import type { AppProps } from 'next/app';
-import { MantineProvider } from '@mantine/core';
+import { ShadcnProvider } from '@shadcn/ui';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/react';
@@ -18,9 +17,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <main className='m-auto max-w-4xl'>
         <Analytics />
         <SpeedInsights />
-        <MantineProvider defaultColorScheme='dark'>
+        <ShadcnProvider>
           <Component {...pageProps} />
-        </MantineProvider>
+        </ShadcnProvider>
       </main>
       {pathname === '/' && (
         <footer>

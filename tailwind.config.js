@@ -3,13 +3,13 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   important: '#__next',
   theme: {
-    /* Mantineと一致させる: https://mantine.dev/theming/responsive */
     screens: {
-      xs: '576px',
-      sm: '768px',
-      md: '992px',
-      lg: '1200px',
-      xl: '1400px',
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
     },
   },
   plugins: [],

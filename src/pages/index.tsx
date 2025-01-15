@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { Title } from '@component/layout/Title';
-import { RingProgress } from '@mantine/core';
+import { RingProgress } from '@shadcn/ui';
 
 const TITLE_INFOMATION_LIST = [
   {

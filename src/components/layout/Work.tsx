@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Button, Image, MantineSize } from '@mantine/core';
-import { useMediaQuery } from 'src/lib/mantine';
+import { Button, Image } from '@shadcn/ui';
+import { useMediaQuery } from '@shadcn/ui';
 
 type Props = {
   name: string;
@@ -15,7 +15,7 @@ const handleWindowOpen = (url: string): void => {
 };
 
 export const Work: FC<Props> = ({ name, url, img, technologies, description }) => {
-  const size: MantineSize = useMediaQuery('xs') ? 'sm' : 'xs';
+  const size = useMediaQuery('xs') ? 'sm' : 'xs';
   return (
     <div>
       <div className='py-2 text-xl font-semibold text-white'>{name}</div>

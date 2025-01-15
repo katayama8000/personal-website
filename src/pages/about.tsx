@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container, Image, Text, Title, SimpleGrid } from '@mantine/core';
+import { Container, Image, Text, Title, SimpleGrid } from '@shadcn/ui';
 import { NextPage } from 'next/types';
 import Head from 'next/head';
 import dayjs from 'dayjs';
