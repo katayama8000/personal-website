@@ -11,9 +11,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Format check
-        run: yarn format:check
+        run: pnpm format:check
       - name: Run lint check
-        run: yarn lint
+        run: pnpm lint

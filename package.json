@@ -9,7 +9,7 @@
     "format:check": "prettier --check --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\""
   },
   "lint-staged": {
-    "*.{ts,tsx}": "yarn format"
+    "*.{ts,tsx}": "pmpn format"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
