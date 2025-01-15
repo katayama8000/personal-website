@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Work } from '@component/layout/Work';
 import Head from 'next/head';
 import { Box } from '@mantine/core';
@@ -74,15 +74,20 @@ const WORK_INFORMATION_LIST = [
 ];
 
 const Works: NextPage = () => {
+  const router = useRouter();
+  const handleLinkClick = (url: string) => {
+    router.push(url);
+  };
+
   return (
     <>
       <Head>
         <title>Works</title>
       </Head>
       <div className='px-4 py-14 sm:p-20'>
-        <Link href='/' className='text-5xl'>
+        <span onClick={() => handleLinkClick('/')} className='text-5xl cursor-pointer'>
           ←
-        </Link>
+        </span>
         <h1 className='py-10 text-3xl font-bold text-white'>Works</h1>
         {WORK_INFORMATION_LIST.map(({ name, url, img, technologies, description }) => (
           <Box my={20} key={url}>

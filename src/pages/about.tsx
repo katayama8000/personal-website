@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Container, Image, Text, Title, SimpleGrid } from '@mantine/core';
 import { NextPage } from 'next/types';
 import Head from 'next/head';
@@ -30,15 +30,20 @@ const About: NextPage = () => {
   const yearsOfWorkExperience = Math.round(currentDate.diff(startDateOfWork, 'year', true));
   const yearsSinceMarriage = Math.round(currentDate.diff(marriageDate, 'year', true));
 
+  const router = useRouter();
+  const handleLinkClick = (url: string) => {
+    router.push(url);
+  };
+
   return (
     <>
       <Head>
         <title>About Me</title>
       </Head>
       <Container className='px-2 py-14 sm:p-20'>
-        <Link href='/' className='text-5xl'>
+        <span onClick={() => handleLinkClick('/')} className='text-5xl cursor-pointer'>
           ←
-        </Link>
+        </span>
         <Title order={1} my={30} size={30}>
           About
         </Title>

@@ -3,7 +3,7 @@ import 'src/lib/tailwind.css';
 import type { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 

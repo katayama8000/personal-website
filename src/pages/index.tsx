@@ -12,12 +12,12 @@ const TITLE_INFOMATION_LIST = [
   {
     title: 'About',
     description: 'Brief introduction about me',
-    pageUrl: 'about',
+    pageUrl: '/about',
   },
   {
     title: 'Works',
     description: 'What I have build',
-    pageUrl: 'works',
+    pageUrl: '/works',
   },
   {
     title: 'GohanDAO',
