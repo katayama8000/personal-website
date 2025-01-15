@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation';
 import { Container, Image, Text, Title, SimpleGrid } from '@mantine/core';
-import { NextPage } from 'next/types';
+import type { NextPage } from 'next/types';
 import Head from 'next/head';
 import dayjs from 'dayjs';
 
@@ -41,9 +41,9 @@ const About: NextPage = () => {
         <title>About Me</title>
       </Head>
       <Container className='px-2 py-14 sm:p-20'>
-        <span onClick={() => handleLinkClick('/')} className='text-5xl cursor-pointer'>
+        <button onClick={() => handleLinkClick('/')} className='text-5xl cursor-pointer' type='button'>
           ←
-        </span>
+        </button>
         <Title order={1} my={30} size={30}>
           About
         </Title>
@@ -58,14 +58,15 @@ const About: NextPage = () => {
         <Text className='pb-10'>
           I got married {yearsSinceMarriage} years ago, and my main focus is to enjoy life with my wife. She has
           attracted a significant following on{' '}
-          <span
+          <button
             onClick={() => {
               window.open('https://twitter.com/nimanimoney');
             }}
             className='cursor-pointer px-1 underline'
+            type='button'
           >
             Twitter
-          </span>
+          </button>
           because of her captivating personality.
           <br />
           We both share a passion for music and movies, which played a significant role in bringing us together.
