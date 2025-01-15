@@ -12,8 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Format check
-        run: yarn format:check
+        run: pnpm format:check
       - name: Run lint check
-        run: yarn lint
+        run: pnpm lint
