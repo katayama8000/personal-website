@@ -20,7 +20,7 @@
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
     "dayjs": "^1.11.13",
-    "next": "15.0.3",
+    "next": "15.1.6",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-error-boundary": "^5.0.0"
