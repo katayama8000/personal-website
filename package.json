@@ -26,7 +26,7 @@
     "react-error-boundary": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.13.8",
+    "@types/node": "^22.13.15",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.21.0",
