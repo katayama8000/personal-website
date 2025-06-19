@@ -3,14 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const IMAGES = [
-  '/img/music/harukamirai.png',
-  '/img/music/bluehearts.png',
-  '/img/music/kururi.png',
-  '/img/music/asikan.png',
-  '/img/movie/fightclub.png',
-  '/img/movie/greenbook.png',
-  '/img/movie/joker.png',
-  '/img/movie/goodwillhunting.png',
+  '/img/cat/cat1.jpg',
+  '/img/cat/cat2.jpg',
+  '/img/cat/cat3.jpg',
+  '/img/cat/cat4.jpg',
+  '/img/cat/cat5.jpg',
+  '/img/cat/cat6.jpg',
+  '/img/cat/cat7.jpg',
+  '/img/cat/cat8.jpg',
 ] as const;
 
 const AUSTRALIA_IMAGES = [
@@ -23,7 +23,6 @@ const AUSTRALIA_IMAGES = [
 export default function AboutPage() {
   const currentYear = new Date().getFullYear();
   const yearsOfWorkExperience = currentYear - 2021;
-  const yearsSinceMarriage = currentYear - 2020;
 
   return (
     <div className="min-h-screen bg-white">
@@ -55,21 +54,13 @@ export default function AboutPage() {
 
           <div className="text-lg leading-relaxed space-y-6 mb-12 text-gray-700">
             <p>
-              I got married {yearsSinceMarriage} years ago, and my main focus is
-              to enjoy life with my wife. She has attracted a significant
-              following on{' '}
-              <a
-                href="https://twitter.com/nimanimoney"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2">
-                Twitter
-              </a>{' '}
-              because of her captivating personality.
+              I have two cats named moufu and ikura. I work for feed them. Those
+              cats grew up in harsh environments, so they deserve to be happy
+              for the rest of their lives.
             </p>
             <p>
-              We both share a passion for music and movies, which played a
-              significant role in bringing us together.
+              I used to play guitar and I love listening to music, especially
+              rock music.
             </p>
           </div>
 
