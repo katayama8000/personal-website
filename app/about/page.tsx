@@ -1,6 +1,10 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
+import { X } from 'lucide-react';
 
 const IMAGES = [
   '/img/cat/cat1.jpg',
@@ -23,6 +27,15 @@ const AUSTRALIA_IMAGES = [
 export default function AboutPage() {
   const currentYear = new Date().getFullYear();
   const yearsOfWorkExperience = currentYear - 2021;
+  const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+
+  const handleImageClick = (imageSrc: string) => {
+    setEnlargedImage(imageSrc);
+  };
+
+  const closeEnlargedImage = () => {
+    setEnlargedImage(null);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -54,9 +67,9 @@ export default function AboutPage() {
 
           <div className="text-lg leading-relaxed space-y-6 mb-12 text-gray-700">
             <p>
-              I have two cats named moufu and ikura. I work for feed them. Those
-              cats grew up in harsh environments, so they deserve to be happy
-              for the rest of their lives.
+              I have two cats named Moufu and Ikura. I work for them. These cats
+              grew up in harsh environments, so they deserve to be happy for the
+              rest of their lives.
             </p>
             <p>
               I used to play guitar and I love listening to music, especially
@@ -73,7 +86,8 @@ export default function AboutPage() {
                   alt=""
                   width={180}
                   height={180}
-                  className="w-full h-full object-cover rounded-lg border border-gray-200"
+                  className="w-full h-full object-cover rounded-lg border border-gray-200 cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => handleImageClick(url)}
                 />
               </div>
             ))}
@@ -95,7 +109,8 @@ export default function AboutPage() {
                   alt=""
                   width={180}
                   height={180}
-                  className="w-full h-full object-cover rounded-lg border border-gray-200"
+                  className="w-full h-full object-cover rounded-lg border border-gray-200 cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => handleImageClick(url)}
                 />
               </div>
             ))}
@@ -112,6 +127,29 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
+
+      {/* Image Enlargement Modal */}
+      {enlargedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+          onClick={closeEnlargedImage}>
+          <div className="relative max-w-4xl max-h-full">
+            <button
+              onClick={closeEnlargedImage}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+              <X size={32} />
+            </button>
+            <Image
+              src={enlargedImage}
+              alt="Enlarged image"
+              width={800}
+              height={800}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
