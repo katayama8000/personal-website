@@ -27,7 +27,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-6 py-16">
+      <div className="max-w-2xl mx-auto px-6 py-16">
         {/* Back Button */}
         <Button
           asChild

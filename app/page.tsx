@@ -1,6 +1,4 @@
-import { Button } from '@/components/ui/button';
 import {
-  ExternalLink,
   User,
   Github,
   MessageCircle,
@@ -66,7 +64,7 @@ const TITLE_INFORMATION_LIST = [
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-6 py-8">
+      <div className="max-w-2xl mx-auto px-6 py-8">
         {/* Header with Profile */}
         <header className="mb-8">
           {/* Profile Image with Text */}
@@ -96,23 +94,21 @@ export default function HomePage() {
         </header>
 
         {/* Navigation Links */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {TITLE_INFORMATION_LIST.map((item) => (
-            <div
-              key={item.title}
-              className="group p-6 border border-gray-200 rounded-lg hover:border-gray-300 hover:shadow-sm transition-all duration-200">
+            <div key={item.title} className="group py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4 flex-1">
                   {/* Icon */}
-                  <div className="p-2 bg-gray-50 rounded-md group-hover:bg-gray-100 transition-colors">
+                  <div className="text-gray-400 group-hover:text-gray-600 transition-colors">
                     {item.icon}
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-xl font-medium text-gray-900 mb-2">
+                    <h3 className="text-lg font-medium text-gray-900 group-hover:text-black transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-sm text-gray-500 mt-1">
                       {item.description}
                     </p>
                   </div>
@@ -120,22 +116,19 @@ export default function HomePage() {
 
                 <div className="ml-6">
                   {item.pageUrl ? (
-                    <Button asChild variant="outline">
-                      <Link href={`/${item.pageUrl}`}>View</Link>
-                    </Button>
+                    <Link
+                      href={`/${item.pageUrl}`}
+                      className="text-sm text-gray-400 hover:text-gray-600 transition-colors font-medium">
+                      View →
+                    </Link>
                   ) : (
-                    <Button
-                      asChild
-                      variant="ghost"
-                      className="group-hover:bg-gray-50">
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Visit
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-400 hover:text-gray-600 transition-colors font-medium">
+                      Visit →
+                    </a>
                   )}
                 </div>
               </div>
