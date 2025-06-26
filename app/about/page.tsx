@@ -2,9 +2,9 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton';
 
 const IMAGES = [
   '/img/cat/cat1.jpg',
@@ -28,10 +28,6 @@ export default function AboutPage() {
   const currentYear = new Date().getFullYear();
   const yearsOfWorkExperience = currentYear - 2021;
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
-
-  const handleImageClick = (imageSrc: string) => {
-    setEnlargedImage(imageSrc);
-  };
 
   const closeEnlargedImage = () => {
     setEnlargedImage(null);
@@ -81,13 +77,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {IMAGES.map((url, index) => (
               <div key={index} className="aspect-square">
-                <Image
+                <ImageWithSkeleton
                   src={url || '/placeholder.svg'}
                   alt=""
-                  width={180}
-                  height={180}
-                  className="w-full h-full object-cover rounded-lg border border-gray-200 cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={() => handleImageClick(url)}
+                  onClick={() => setEnlargedImage(url)}
                 />
               </div>
             ))}
@@ -104,13 +97,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {AUSTRALIA_IMAGES.map((url, index) => (
               <div key={index} className="aspect-square">
-                <Image
+                <ImageWithSkeleton
                   src={url || '/placeholder.svg'}
                   alt=""
-                  width={180}
-                  height={180}
-                  className="w-full h-full object-cover rounded-lg border border-gray-200 cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={() => handleImageClick(url)}
+                  onClick={() => setEnlargedImage(url)}
                 />
               </div>
             ))}
@@ -139,12 +129,10 @@ export default function AboutPage() {
               className="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
               <X size={32} />
             </button>
-            <Image
+            <ImageWithSkeleton
               src={enlargedImage}
               alt="Enlarged image"
-              width={800}
-              height={800}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              isLarge
               onClick={(e) => e.stopPropagation()}
             />
           </div>
