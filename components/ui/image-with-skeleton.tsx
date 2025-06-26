@@ -23,7 +23,10 @@ export const ImageWithSkeleton: FC<Props> = ({
     if (onLoadingComplete) onLoadingComplete();
   };
   return (
-    <div className="relative w-full h-full">
+    <div
+      className={`relative w-full h-full transition-all duration-700 ${
+        loaded ? 'animate-fade-in-up' : ''
+      }`}>
       {!loaded && (
         <div
           className={`absolute inset-0 w-full h-full rounded-lg bg-gray-200 animate-pulse z-0${
