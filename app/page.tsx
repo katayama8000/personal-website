@@ -6,6 +6,7 @@ import {
   FileText,
   StickyNote,
   Twitter,
+  ExternalLink,
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -95,45 +96,58 @@ export default function HomePage() {
 
         {/* Navigation Links */}
         <div className="space-y-8">
-          {TITLE_INFORMATION_LIST.map((item) => (
-            <div key={item.title} className="group py-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4 flex-1">
-                  {/* Icon */}
-                  <div className="text-gray-400 group-hover:text-gray-600 transition-colors">
-                    {item.icon}
+          {TITLE_INFORMATION_LIST.map((item) => {
+            const isInternal = !!item.pageUrl;
+            const baseClass =
+              'block group py-4 rounded-lg transition-colors focus:outline-none';
+            const iconClass =
+              'text-gray-400 group-hover:text-gray-600 transition-colors';
+            const titleClass =
+              'text-lg font-medium text-gray-900 group-hover:underline transition-colors flex items-center gap-1';
+            if (isInternal) {
+              return (
+                <Link
+                  key={item.title}
+                  href={`/${item.pageUrl}`}
+                  className={baseClass}>
+                  <div className="flex items-center gap-4">
+                    <div className={iconClass}>{item.icon}</div>
+                    <div className="flex-1">
+                      <h3 className={titleClass}>{item.title}</h3>
+                      <p className="text-sm text-gray-500 mt-1">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="flex-1">
-                    <h3 className="text-lg font-medium text-gray-900 group-hover:text-black transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mt-1">
-                      {item.description}
-                    </p>
+                </Link>
+              );
+            } else {
+              return (
+                <a
+                  key={item.title}
+                  href={item.url || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={baseClass}>
+                  <div className="flex items-center gap-4">
+                    <div className={iconClass}>{item.icon}</div>
+                    <div className="flex-1">
+                      <h3 className={titleClass}>
+                        {item.title}
+                        <ExternalLink
+                          className="inline-block w-4 h-4 text-gray-400 ml-1 align-text-bottom group-hover:text-gray-600 transition-colors"
+                          aria-label="External link"
+                        />
+                      </h3>
+                      <p className="text-sm text-gray-500 mt-1">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-
-                <div className="ml-6">
-                  {item.pageUrl ? (
-                    <Link
-                      href={`/${item.pageUrl}`}
-                      className="text-sm text-gray-400 hover:text-gray-600 transition-colors font-medium">
-                      View →
-                    </Link>
-                  ) : (
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-400 hover:text-gray-600 transition-colors font-medium">
-                      Visit →
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
+                </a>
+              );
+            }
+          })}
         </div>
       </div>
     </div>
