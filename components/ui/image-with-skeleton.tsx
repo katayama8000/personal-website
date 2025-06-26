@@ -7,6 +7,7 @@ export type Props = {
   alt: string;
   isLarge?: boolean;
   onClick?: (e: MouseEvent<HTMLImageElement>) => void;
+  onLoadingComplete?: () => void;
 };
 
 export const ImageWithSkeleton: FC<Props> = ({
@@ -14,8 +15,13 @@ export const ImageWithSkeleton: FC<Props> = ({
   alt,
   isLarge = false,
   onClick,
+  onLoadingComplete,
 }) => {
   const [loaded, setLoaded] = useState(false);
+  const handleLoaded = () => {
+    setLoaded(true);
+    if (onLoadingComplete) onLoadingComplete();
+  };
   return (
     <div className="relative w-full h-full">
       {!loaded && (
@@ -33,7 +39,7 @@ export const ImageWithSkeleton: FC<Props> = ({
         className={`w-full h-full object-cover rounded-lg z-10${
           isLarge ? ' max-w-full max-h-[90vh] object-contain' : ''
         }`}
-        onLoadingComplete={() => setLoaded(true)}
+        onLoadingComplete={handleLoaded}
         onClick={onClick}
         priority={isLarge}
       />

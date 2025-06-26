@@ -28,9 +28,12 @@ export default function AboutPage() {
   const currentYear = new Date().getFullYear();
   const yearsOfWorkExperience = currentYear - 2021;
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+  const [enlargedImageLoaded, setEnlargedImageLoaded] =
+    useState<boolean>(false);
 
   const closeEnlargedImage = () => {
     setEnlargedImage(null);
+    setEnlargedImageLoaded(false);
   };
 
   return (
@@ -124,16 +127,19 @@ export default function AboutPage() {
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
           onClick={closeEnlargedImage}>
           <div className="relative max-w-4xl max-h-full">
-            <button
-              onClick={closeEnlargedImage}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
-              <X size={32} />
-            </button>
+            {enlargedImageLoaded && (
+              <button
+                onClick={closeEnlargedImage}
+                className="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+                <X size={32} />
+              </button>
+            )}
             <ImageWithSkeleton
               src={enlargedImage}
               alt="Enlarged image"
               isLarge
               onClick={(e) => e.stopPropagation()}
+              onLoadingComplete={() => setEnlargedImageLoaded(true)}
             />
           </div>
         </div>
