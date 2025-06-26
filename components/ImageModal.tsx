@@ -4,7 +4,8 @@ import React, { FC } from 'react';
 export const ImageModal: FC<{
   image: string;
   onClose: () => void;
-}> = ({ image, onClose }) => (
+  loaded?: boolean;
+}> = ({ image, onClose, loaded }) => (
   <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 transition-opacity animate-fadeIn">
     <div className="relative max-w-4xl max-h-full flex items-center justify-center">
       <div
@@ -14,7 +15,7 @@ export const ImageModal: FC<{
           src={image}
           alt="Enlarged image"
           isLarge
-          overlayOnHover={false}
+          {...(loaded ? { loaded: true } : {})}
         />
         <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40 rounded-lg">
           Click to Close

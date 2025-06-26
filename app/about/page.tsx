@@ -28,6 +28,16 @@ const AboutPage = () => {
   const currentYear = new Date().getFullYear();
   const yearsOfWorkExperience = currentYear - 2021;
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+  const [catsLoaded, setCatsLoaded] = useState(false);
+  const [abroadLoaded, setAbroadLoaded] = useState(false);
+  const [imageLoadedMap, setImageLoadedMap] = useState<{
+    [src: string]: boolean;
+  }>({});
+  const allLoaded = catsLoaded && abroadLoaded;
+
+  const handleImageLoaded = (src: string) => {
+    setImageLoadedMap((prev) => ({ ...prev, [src]: true }));
+  };
 
   const closeEnlargedImage = () => {
     setEnlargedImage(null);
@@ -74,7 +84,13 @@ const AboutPage = () => {
           </div>
 
           {/* Music and Movies Grid */}
-          <ImageGrid images={IMAGES} onImageClick={setEnlargedImage} />
+          <ImageGrid
+            images={IMAGES}
+            onImageClick={setEnlargedImage}
+            onAllImagesLoaded={() => setCatsLoaded(true)}
+            animateAll={allLoaded}
+            onImageLoaded={handleImageLoaded}
+          />
 
           <div className="text-lg leading-relaxed mb-12 text-gray-700">
             <p>
@@ -89,7 +105,13 @@ const AboutPage = () => {
           </div>
 
           {/* Abroad Images Grid */}
-          <ImageGrid images={ABROAD_IMAGES} onImageClick={setEnlargedImage} />
+          <ImageGrid
+            images={ABROAD_IMAGES}
+            onImageClick={setEnlargedImage}
+            onAllImagesLoaded={() => setAbroadLoaded(true)}
+            animateAll={allLoaded}
+            onImageLoaded={handleImageLoaded}
+          />
 
           <h2 className="text-2xl font-light text-gray-900 mb-6">Contact</h2>
           <p className="text-lg text-gray-700">
@@ -104,7 +126,10 @@ const AboutPage = () => {
       </div>
 
       {/* Image Enlargement Modal */}
-      {enlargedImage && (
+      {enlargedImage && imageLoadedMap[enlargedImage] && (
+        <ImageModal image={enlargedImage} onClose={closeEnlargedImage} loaded />
+      )}
+      {enlargedImage && !imageLoadedMap[enlargedImage] && (
         <ImageModal image={enlargedImage} onClose={closeEnlargedImage} />
       )}
     </div>

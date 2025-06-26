@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { FC, MouseEvent } from 'react';
 
 export type Props = {
@@ -9,6 +9,7 @@ export type Props = {
   onClick?: (e: MouseEvent<HTMLImageElement>) => void;
   onLoadingComplete?: () => void;
   overlayOnHover?: boolean;
+  loaded?: boolean; // 追加
 };
 
 export const ImageWithSkeleton: FC<Props> = ({
@@ -18,8 +19,12 @@ export const ImageWithSkeleton: FC<Props> = ({
   onClick,
   onLoadingComplete,
   overlayOnHover = false,
+  loaded: loadedProp = false, // 追加
 }) => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(loadedProp);
+  useEffect(() => {
+    if (loadedProp) setLoaded(true);
+  }, [loadedProp]);
   const handleLoaded = () => {
     setLoaded(true);
     if (onLoadingComplete) onLoadingComplete();
