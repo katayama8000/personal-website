@@ -79,11 +79,12 @@ export default function AboutPage() {
           {/* Music and Movies Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {IMAGES.map((url, index) => (
-              <div key={index} className="aspect-square">
+              <div key={index} className="aspect-square group cursor-pointer">
                 <ImageWithSkeleton
                   src={url || '/placeholder.svg'}
                   alt=""
                   onClick={() => setEnlargedImage(url)}
+                  overlayOnHover
                 />
               </div>
             ))}
@@ -103,11 +104,12 @@ export default function AboutPage() {
           {/* Abroad Images Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {ABROAD_IMAGES.map((url, index) => (
-              <div key={index} className="aspect-square">
+              <div key={index} className="aspect-square group cursor-pointer">
                 <ImageWithSkeleton
                   src={url || '/placeholder.svg'}
                   alt=""
                   onClick={() => setEnlargedImage(url)}
+                  overlayOnHover
                 />
               </div>
             ))}

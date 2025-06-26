@@ -8,6 +8,7 @@ export type Props = {
   isLarge?: boolean;
   onClick?: (e: MouseEvent<HTMLImageElement>) => void;
   onLoadingComplete?: () => void;
+  overlayOnHover?: boolean;
 };
 
 export const ImageWithSkeleton: FC<Props> = ({
@@ -16,6 +17,7 @@ export const ImageWithSkeleton: FC<Props> = ({
   isLarge = false,
   onClick,
   onLoadingComplete,
+  overlayOnHover = false,
 }) => {
   const [loaded, setLoaded] = useState(false);
   const handleLoaded = () => {
@@ -46,6 +48,13 @@ export const ImageWithSkeleton: FC<Props> = ({
         onClick={onClick}
         priority={isLarge}
       />
+      {overlayOnHover && (
+        <div className="absolute inset-0 rounded-lg bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none z-20">
+          <span className="text-white text-2xl font-bold drop-shadow">
+            Click to enlarge
+          </span>
+        </div>
+      )}
     </div>
   );
 };
