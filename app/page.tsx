@@ -5,8 +5,8 @@ import {
   BookOpen,
   FileText,
   StickyNote,
-  Twitter,
   ExternalLink,
+  X,
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -55,10 +55,10 @@ const TITLE_INFORMATION_LIST = [
     icon: <StickyNote className="h-5 w-5" />,
   },
   {
-    title: 'Contact',
-    description: 'Contact me on Twitter',
+    title: 'X',
+    description: 'Contact me on X',
     url: 'https://twitter.com/katayama8000',
-    icon: <Twitter className="h-5 w-5" />,
+    icon: <X className="h-5 w-5" />,
   },
 ];
 
