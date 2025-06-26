@@ -51,9 +51,9 @@ const AboutPage = () => {
           <div className="text-lg leading-relaxed space-y-6 mb-12 text-gray-700">
             <p>
               I&apos;m an engineer based in Nagoya, Japan, with{' '}
-              {yearsOfWorkExperience} years of professional experience. My work
-              involves using various programming languages such as C,
-              JavaScript, TypeScript, and I&apos;m currently interested in Rust.
+              {yearsOfWorkExperience} years of professional experience. I work
+              with various programming languages such as C, JavaScript, and
+              TypeScript, and I&apos;m currently interested in Rust.
             </p>
           </div>
 
@@ -63,13 +63,13 @@ const AboutPage = () => {
 
           <div className="text-lg leading-relaxed space-y-6 mb-12 text-gray-700">
             <p>
-              I have two cats named Moufu and Ikura. I work for them. These cats
-              grew up in harsh environments, so they deserve to be happy for the
-              rest of their lives.
+              I have two cats, Moufu and Ikura, who mean the world to me. They
+              grew up in tough environments, so I want to make sure they live
+              happily for the rest of their lives.
             </p>
             <p>
               I used to play guitar and I love listening to music, especially
-              rock music.
+              rock.
             </p>
           </div>
 
@@ -78,12 +78,13 @@ const AboutPage = () => {
 
           <div className="text-lg leading-relaxed mb-12 text-gray-700">
             <p>
-              After finishing high school, I lived in Australia, and now
-              I&apos;m eager to revisit the country.
+              After graduating from high school, I lived in Australia for a
+              while, and now I&apos;m eager to visit again.
             </p>
+            <br />
             <p>
-              I love traveling abroad and I prefre to travel alone. I enjoy
-              visiting places where I can experience the local culture.
+              I love traveling abroad, especially solo trips. I enjoy visiting
+              places where I can experience the local culture firsthand.
             </p>
           </div>
 
