@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { ImageGrid } from '@/components/ImageGrid';
 import { ImageModal } from '@/components/ImageModal';
 
@@ -24,24 +24,34 @@ const ABROAD_IMAGES = [
   '/img/abroad/4.jpg',
 ] as const;
 
+const useAllImagesLoaded = () => {
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const handleLoaded = useCallback(() => {
+    setLoaded(true);
+  }, []);
+  return [loaded, handleLoaded] as const;
+};
+
 const AboutPage = () => {
   const currentYear = new Date().getFullYear();
   const yearsOfWorkExperience = currentYear - 2021;
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
-  const [catsLoaded, setCatsLoaded] = useState(false);
-  const [abroadLoaded, setAbroadLoaded] = useState(false);
   const [imageLoadedMap, setImageLoadedMap] = useState<{
     [src: string]: boolean;
   }>({});
+
+  // 猫画像・海外画像のロード管理
+  const [catsLoaded, handleCatLoaded] = useAllImagesLoaded();
+  const [abroadLoaded, handleAbroadLoaded] = useAllImagesLoaded();
   const allLoaded = catsLoaded && abroadLoaded;
 
-  const handleImageLoaded = (src: string) => {
+  const handleImageLoaded = useCallback((src: string) => {
     setImageLoadedMap((prev) => ({ ...prev, [src]: true }));
-  };
+  }, []);
 
-  const closeEnlargedImage = () => {
+  const closeEnlargedImage = useCallback(() => {
     setEnlargedImage(null);
-  };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -58,20 +68,20 @@ const AboutPage = () => {
         <div className="prose prose-gray max-w-none">
           <h1 className="text-4xl font-light text-gray-900 mb-8">About</h1>
 
-          <div className="text-lg leading-relaxed space-y-6 mb-12 text-gray-700">
+          <section className="text-lg leading-relaxed space-y-6 mb-12 text-gray-700">
             <p>
               I&apos;m an engineer based in Nagoya, Japan, with{' '}
               {yearsOfWorkExperience} years of professional experience. I work
               with various programming languages such as C, JavaScript, and
               TypeScript, and I&apos;m currently interested in Rust.
             </p>
-          </div>
+          </section>
 
           <h2 className="text-2xl font-light text-gray-900 mb-6">
             Outside of Work
           </h2>
 
-          <div className="text-lg leading-relaxed space-y-6 mb-12 text-gray-700">
+          <section className="text-lg leading-relaxed space-y-6 mb-12 text-gray-700">
             <p>
               I have two cats, Moufu and Ikura, who mean the world to me. They
               grew up in tough environments, so I want to make sure they live
@@ -81,34 +91,33 @@ const AboutPage = () => {
               I used to play guitar and I love listening to music, especially
               rock.
             </p>
-          </div>
+          </section>
 
           {/* Music and Movies Grid */}
           <ImageGrid
             images={IMAGES}
             onImageClick={setEnlargedImage}
-            onAllImagesLoaded={() => setCatsLoaded(true)}
+            onAllImagesLoaded={handleCatLoaded}
             animateAll={allLoaded}
             onImageLoaded={handleImageLoaded}
           />
 
-          <div className="text-lg leading-relaxed mb-12 text-gray-700">
+          <section className="text-lg leading-relaxed mb-12 text-gray-700">
             <p>
               After graduating from high school, I lived in Australia for a
               while, and now I&apos;m eager to visit again.
             </p>
-            <br />
             <p>
               I love traveling abroad, especially solo trips. I enjoy visiting
               places where I can experience the local culture firsthand.
             </p>
-          </div>
+          </section>
 
           {/* Abroad Images Grid */}
           <ImageGrid
             images={ABROAD_IMAGES}
             onImageClick={setEnlargedImage}
-            onAllImagesLoaded={() => setAbroadLoaded(true)}
+            onAllImagesLoaded={handleAbroadLoaded}
             animateAll={allLoaded}
             onImageLoaded={handleImageLoaded}
           />

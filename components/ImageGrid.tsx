@@ -1,38 +1,41 @@
 import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState, useCallback } from 'react';
 
-export const ImageGrid: FC<{
+export type Props = {
   images: readonly string[];
   onImageClick: (url: string) => void;
   onAllImagesLoaded?: () => void;
   animateAll?: boolean;
   onImageLoaded?: (src: string) => void;
-}> = ({
+};
+
+export const ImageGrid: FC<Props> = ({
   images,
   onImageClick,
   onAllImagesLoaded,
   animateAll,
   onImageLoaded,
 }) => {
-  const [loadedCount, setLoadedCount] = useState(0);
+  const [loadedCount, setLoadedCount] = useState<number>(0);
   const allLoaded = loadedCount === images.length;
 
-  useEffect(() => {
-    if (allLoaded && onAllImagesLoaded) {
-      onAllImagesLoaded();
-    }
-  }, [allLoaded, onAllImagesLoaded]);
+  const handleLoaded = useCallback(
+    (src: string) => {
+      setLoadedCount((c) => c + 1);
+      onImageLoaded?.(src);
+    },
+    [onImageLoaded]
+  );
 
-  const handleLoaded = (src: string) => {
-    setLoadedCount((c) => c + 1);
-    if (onImageLoaded) onImageLoaded(src);
-  };
+  useEffect(() => {
+    if (allLoaded) onAllImagesLoaded?.();
+  }, [allLoaded, onAllImagesLoaded]);
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
       {images.map((url, index) => (
         <div
-          key={index}
+          key={url}
           className="aspect-square group cursor-pointer relative"
           style={{
             opacity: allLoaded ? 1 : 0,
