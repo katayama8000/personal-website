@@ -3,7 +3,6 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useState } from 'react';
-import { X } from 'lucide-react';
 import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton';
 
 const IMAGES = [
@@ -28,12 +27,9 @@ export default function AboutPage() {
   const currentYear = new Date().getFullYear();
   const yearsOfWorkExperience = currentYear - 2021;
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
-  const [enlargedImageLoaded, setEnlargedImageLoaded] =
-    useState<boolean>(false);
 
   const closeEnlargedImage = () => {
     setEnlargedImage(null);
-    setEnlargedImageLoaded(false);
   };
 
   return (
@@ -79,7 +75,9 @@ export default function AboutPage() {
           {/* Music and Movies Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {IMAGES.map((url, index) => (
-              <div key={index} className="aspect-square group cursor-pointer">
+              <div
+                key={index}
+                className="aspect-square group cursor-pointer relative transition-transform duration-200 hover:scale-105">
                 <ImageWithSkeleton
                   src={url || '/placeholder.svg'}
                   alt=""
@@ -104,7 +102,9 @@ export default function AboutPage() {
           {/* Abroad Images Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {ABROAD_IMAGES.map((url, index) => (
-              <div key={index} className="aspect-square group cursor-pointer">
+              <div
+                key={index}
+                className="aspect-square group cursor-pointer relative transition-transform duration-200 hover:scale-105">
                 <ImageWithSkeleton
                   src={url || '/placeholder.svg'}
                   alt=""
@@ -129,24 +129,21 @@ export default function AboutPage() {
 
       {/* Image Enlargement Modal */}
       {enlargedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
-          onClick={closeEnlargedImage}>
-          <div className="relative max-w-4xl max-h-full">
-            {enlargedImageLoaded && (
-              <button
-                onClick={closeEnlargedImage}
-                className="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
-                <X size={32} />
-              </button>
-            )}
-            <ImageWithSkeleton
-              src={enlargedImage}
-              alt="Enlarged image"
-              isLarge
-              onClick={(e) => e.stopPropagation()}
-              onLoadingComplete={() => setEnlargedImageLoaded(true)}
-            />
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 transition-opacity animate-fadeIn">
+          <div className="relative max-w-4xl max-h-full flex items-center justify-center">
+            <div
+              className="group relative cursor-pointer rounded-lg shadow-lg transition-transform duration-200 hover:scale-105"
+              onClick={closeEnlargedImage}>
+              <ImageWithSkeleton
+                src={enlargedImage}
+                alt="Enlarged image"
+                isLarge
+              />
+              {/* Hover Overlay */}
+              <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40 rounded-lg">
+                Click to Close
+              </span>
+            </div>
           </div>
         </div>
       )}
