@@ -3,7 +3,8 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useState } from 'react';
-import { ImageWithSkeleton } from '@/components/ui/image-with-skeleton';
+import { ImageGrid } from '@/components/ImageGrid';
+import { ImageModal } from '@/components/ImageModal';
 
 const IMAGES = [
   '/img/cat/cat1.jpg',
@@ -23,7 +24,7 @@ const ABROAD_IMAGES = [
   '/img/abroad/4.jpg',
 ] as const;
 
-export default function AboutPage() {
+const AboutPage = () => {
   const currentYear = new Date().getFullYear();
   const yearsOfWorkExperience = currentYear - 2021;
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
@@ -73,20 +74,7 @@ export default function AboutPage() {
           </div>
 
           {/* Music and Movies Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            {IMAGES.map((url, index) => (
-              <div
-                key={index}
-                className="aspect-square group cursor-pointer relative transition-transform duration-200 hover:scale-105">
-                <ImageWithSkeleton
-                  src={url || '/placeholder.svg'}
-                  alt=""
-                  onClick={() => setEnlargedImage(url)}
-                  overlayOnHover
-                />
-              </div>
-            ))}
-          </div>
+          <ImageGrid images={IMAGES} onImageClick={setEnlargedImage} />
 
           <div className="text-lg leading-relaxed mb-12 text-gray-700">
             <p>
@@ -100,20 +88,7 @@ export default function AboutPage() {
           </div>
 
           {/* Abroad Images Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            {ABROAD_IMAGES.map((url, index) => (
-              <div
-                key={index}
-                className="aspect-square group cursor-pointer relative transition-transform duration-200 hover:scale-105">
-                <ImageWithSkeleton
-                  src={url || '/placeholder.svg'}
-                  alt=""
-                  onClick={() => setEnlargedImage(url)}
-                  overlayOnHover
-                />
-              </div>
-            ))}
-          </div>
+          <ImageGrid images={ABROAD_IMAGES} onImageClick={setEnlargedImage} />
 
           <h2 className="text-2xl font-light text-gray-900 mb-6">Contact</h2>
           <p className="text-lg text-gray-700">
@@ -129,24 +104,10 @@ export default function AboutPage() {
 
       {/* Image Enlargement Modal */}
       {enlargedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 transition-opacity animate-fadeIn">
-          <div className="relative max-w-4xl max-h-full flex items-center justify-center">
-            <div
-              className="group relative cursor-pointer rounded-lg shadow-lg transition-transform duration-200 hover:scale-105"
-              onClick={closeEnlargedImage}>
-              <ImageWithSkeleton
-                src={enlargedImage}
-                alt="Enlarged image"
-                isLarge
-              />
-              {/* Hover Overlay */}
-              <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40 rounded-lg">
-                Click to Close
-              </span>
-            </div>
-          </div>
-        </div>
+        <ImageModal image={enlargedImage} onClose={closeEnlargedImage} />
       )}
     </div>
   );
-}
+};
+
+export default AboutPage;
