@@ -17,11 +17,11 @@ const IMAGES = [
   '/img/cat/cat8.jpg',
 ] as const;
 
-const AUSTRALIA_IMAGES = [
-  '/img/australia/AUS1.png',
-  '/img/australia/AUS2.png',
-  '/img/australia/AUS3.png',
-  '/img/australia/AUS4.png',
+const ABROAD_IMAGES = [
+  '/img/abroad/1.jpg',
+  '/img/abroad/2.jpg',
+  '/img/abroad/3.jpg',
+  '/img/abroad/4.jpg',
 ] as const;
 
 export default function AboutPage() {
@@ -94,11 +94,15 @@ export default function AboutPage() {
               After finishing high school, I lived in Australia, and now
               I&apos;m eager to revisit the country.
             </p>
+            <p>
+              I love traveling abroad and I prefre to travel alone. I enjoy
+              visiting places where I can experience the local culture.
+            </p>
           </div>
 
-          {/* Australia Images Grid */}
+          {/* Abroad Images Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            {AUSTRALIA_IMAGES.map((url, index) => (
+            {ABROAD_IMAGES.map((url, index) => (
               <div key={index} className="aspect-square">
                 <ImageWithSkeleton
                   src={url || '/placeholder.svg'}
