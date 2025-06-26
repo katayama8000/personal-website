@@ -10,7 +10,12 @@ export const ImageModal: FC<{
       <div
         className="group relative cursor-pointer rounded-lg shadow-lg transition-transform duration-200 hover:scale-105"
         onClick={onClose}>
-        <ImageWithSkeleton src={image} alt="Enlarged image" isLarge />
+        <ImageWithSkeleton
+          src={image}
+          alt="Enlarged image"
+          isLarge
+          overlayOnHover={false}
+        />
         <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40 rounded-lg">
           Click to Close
         </span>
