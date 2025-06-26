@@ -46,13 +46,19 @@ export const ImageGrid: FC<Props> = ({
                 ? `fade-in-up 0.5s ${index * 60}ms both`
                 : undefined,
           }}>
-          <ImageWithSkeleton
-            src={url || '/placeholder.svg'}
-            alt=""
-            onClick={() => onImageClick(url)}
-            overlayOnHover
-            onLoadingComplete={() => handleLoaded(url)}
-          />
+          <div className="w-full h-full group relative transition-transform duration-200 hover:scale-image">
+            <ImageWithSkeleton
+              src={url || '/placeholder.svg'}
+              alt=""
+              onClick={() => onImageClick(url)}
+              overlayOnHover
+              onLoadingComplete={() => handleLoaded(url)}
+            />
+            {/* ホバー時のオーバーレイ（拡大時と同じUI） */}
+            <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40 rounded-lg">
+              Click to Enlarge
+            </span>
+          </div>
         </div>
       ))}
     </div>

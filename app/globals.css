@@ -158,3 +158,9 @@
     }
   }
 }
+
+@layer utilities {
+  .hover\:scale-image:hover {
+    transform: scale(1.05);
+  }
+}
