@@ -1,5 +1,25 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  rectSortingStrategy,
+  useSortable,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import {
   ExternalLink,
   User,
@@ -7,11 +27,12 @@ import {
   FileText,
   StickyNote,
   X,
+  GripVertical,
 } from 'lucide-react';
 import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 
-const TITLE_INFORMATION_LIST = [
+const initialItems = [
   {
     title: 'GitHub',
     url: 'https://github.com/katayama8000',
@@ -96,52 +117,107 @@ const SquareCard = ({
   }
 };
 
-const HomePage = () => (
-  <div className="min-h-screen bg-white">
-    <div className="max-w-2xl mx-auto px-6 py-8">
-      {/* Header with Profile */}
-      <header className="mb-8">
-        <div className="flex items-center gap-6 mb-8">
-          <div className="flex-shrink-0">
-            <div className="w-24 h-24 rounded-full bg-white p-2">
-              <Image
-                src="/img/icon/icon0.png"
-                alt="Tatsufumi Katayama"
-                width={100}
-                height={100}
-                className="w-full h-full rounded-full object-cover"
-                priority
-              />
+const SortableSquareCard = ({ item }: { item: typeof initialItems[0] }) => {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+  } = useSortable({ id: item.title });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
+  const isInternal = !!item.pageUrl;
+  const href = isInternal ? `/${item.pageUrl}` : item.url || '#';
+
+  return (
+    <div ref={setNodeRef} style={style} {...attributes} className="relative">
+      <div
+        className="absolute top-2 right-2 p-1 cursor-grab z-10"
+        {...listeners}
+        onClick={(e) => e.preventDefault()}
+      >
+        <GripVertical className="w-5 h-5 text-gray-400" />
+      </div>
+      <SquareCard
+        title={item.title}
+        icon={item.icon}
+        href={href}
+        isInternal={isInternal}
+      />
+    </div>
+  );
+};
+
+
+const HomePage = () => {
+  const [items, setItems] = useState(initialItems);
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  function handleDragEnd({active, over}: DragEndEvent) {
+    if (over && active.id !== over.id) {
+      setItems((currentItems) => {
+        const oldIndex = currentItems.findIndex(item => item.title === active.id);
+        const newIndex = currentItems.findIndex(item => item.title === over.id);
+        return arrayMove(currentItems, oldIndex, newIndex);
+      });
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="max-w-2xl mx-auto px-6 py-8">
+        {/* Header with Profile */}
+        <header className="mb-8">
+          <div className="flex items-center gap-6 mb-8">
+            <div className="flex-shrink-0">
+              <div className="w-24 h-24 rounded-full bg-white p-2">
+                <Image
+                  src="/img/icon/icon0.png"
+                  alt="Tatsufumi Katayama"
+                  width={100}
+                  height={100}
+                  className="w-full h-full rounded-full object-cover"
+                  priority
+                />
+              </div>
+            </div>
+            <div className="flex-1">
+              <h1 className="text-4xl font-light text-gray-900 mb-2">
+                Tatsufumi Katayama
+              </h1>
+              <p className="text-lg text-gray-600 font-medium">
+                I am an engineer based in Nagoya, Japan.
+              </p>
             </div>
           </div>
-          <div className="flex-1">
-            <h1 className="text-4xl font-light text-gray-900 mb-2">
-              Tatsufumi Katayama
-            </h1>
-            <p className="text-lg text-gray-600 font-medium">
-              I am an engineer based in Nagoya, Japan.
-            </p>
-          </div>
-        </div>
-      </header>
-      {/* Navigation Links as Square Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-        {TITLE_INFORMATION_LIST.map((item) => {
-          const isInternal = !!item.pageUrl;
-          const href = isInternal ? `/${item.pageUrl}` : item.url || '#';
-          return (
-            <SquareCard
-              key={item.title}
-              title={item.title}
-              icon={item.icon}
-              href={href}
-              isInternal={isInternal}
-            />
-          );
-        })}
+        </header>
+        {/* Navigation Links as Square Cards */}
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCenter}
+          onDragEnd={handleDragEnd}
+        >
+          <SortableContext items={items.map(item => item.title)} strategy={rectSortingStrategy}>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {items.map((item) => (
+                <SortableSquareCard key={item.title} item={item} />
+              ))}
+            </div>
+          </SortableContext>
+        </DndContext>
       </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default HomePage;
