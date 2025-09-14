@@ -8,6 +8,7 @@ import {
   FileText,
   StickyNote,
   X,
+  Linkedin,
 } from 'lucide-react';
 
 const TITLE_INFORMATION_LIST = [
@@ -40,6 +41,16 @@ const TITLE_INFORMATION_LIST = [
     title: 'X',
     url: 'https://twitter.com/katayama8000',
     icon: <X className="w-8 h-8" />,
+  },
+  {
+    title: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/%E9%81%94%E6%96%87-%E7%89%87%E5%B1%B1-243689236/',
+    icon: <Linkedin className="w-8 h-8" />,
+  },
+  {
+    title: 'Medium',
+    url: 'https://medium.com/@tattu.0310',
+    icon: <ExternalLink className="w-8 h-8" />,
   },
 ];
 
