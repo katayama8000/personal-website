@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState } from 'react';
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 import {
   DndContext,
   closestCenter,
@@ -11,15 +11,15 @@ import {
   useSensor,
   useSensors,
   DragEndEvent,
-} from '@dnd-kit/core';
+} from "@dnd-kit/core";
 import {
   arrayMove,
   SortableContext,
   sortableKeyboardCoordinates,
   rectSortingStrategy,
   useSortable,
-} from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import {
   ExternalLink,
   User,
@@ -28,49 +28,49 @@ import {
   StickyNote,
   X,
   GripVertical,
-} from 'lucide-react';
-import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
-import { GithubIcon } from '@/components/icons/GithubIcon';
+} from "lucide-react";
+import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 
 const initialItems = [
   {
-    title: 'GitHub',
-    url: 'https://github.com/katayama8000',
+    title: "GitHub",
+    url: "https://github.com/katayama8000",
     icon: <GithubIcon className="w-8 h-8" />,
   },
   {
-    title: 'About',
-    pageUrl: 'about',
+    title: "About",
+    pageUrl: "about",
     icon: <User className="w-8 h-8" />,
   },
   {
-    title: 'Zenn',
-    url: 'https://zenn.dev/tattu',
+    title: "Zenn",
+    url: "https://zenn.dev/tattu",
     icon: <BookOpen className="w-8 h-8" />,
   },
   {
-    title: 'Note',
-    url: 'https://note.com/katayama8000',
+    title: "Note",
+    url: "https://note.com/katayama8000",
     icon: <FileText className="w-8 h-8" />,
   },
   {
-    title: 'Scrapbox',
-    url: 'https://scrapbox.io/katayama8000/',
+    title: "Scrapbox",
+    url: "https://scrapbox.io/katayama8000/",
     icon: <StickyNote className="w-8 h-8" />,
   },
   {
-    title: 'X',
-    url: 'https://twitter.com/katayama8000',
+    title: "X",
+    url: "https://twitter.com/katayama8000",
     icon: <X className="w-8 h-8" />,
   },
   {
-    title: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/%E9%81%94%E6%96%87-%E7%89%87%E5%B1%B1-243689236/',
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/%E9%81%94%E6%96%87-%E7%89%87%E5%B1%B1-243689236/",
     icon: <LinkedinIcon className="w-8 h-8" />,
   },
   {
-    title: 'Medium',
-    url: 'https://medium.com/@tattu.0310',
+    title: "Medium",
+    url: "https://medium.com/@tattu.0310",
     icon: <ExternalLink className="w-8 h-8" />,
   },
 ];
@@ -87,9 +87,9 @@ const SquareCard = ({
   isInternal?: boolean;
 }) => {
   const baseClass =
-    'group aspect-square flex flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/5 shadow-2xl hover:shadow-2xl transition-all duration-300 focus:outline-none transform hover:scale-105 backdrop-blur-2xl backdrop-saturate-200';
+    "group aspect-square flex flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/5 shadow-2xl hover:shadow-2xl transition-all duration-300 focus:outline-none transform hover:scale-105 backdrop-blur-2xl backdrop-saturate-200";
   const titleClass =
-    'text-lg font-semibold text-gray-900 mt-2 group-hover:underline transition-colors flex items-center gap-1';
+    "text-lg font-semibold text-gray-900 mt-2 group-hover:underline transition-colors flex items-center gap-1";
   if (isInternal) {
     return (
       <Link href={href} className={baseClass}>
@@ -103,7 +103,8 @@ const SquareCard = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={baseClass}>
+        className={baseClass}
+      >
         <div>{icon}</div>
         <div className={titleClass}>
           {title}
@@ -117,14 +118,9 @@ const SquareCard = ({
   }
 };
 
-const SortableSquareCard = ({ item }: { item: typeof initialItems[0] }) => {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-  } = useSortable({ id: item.title });
+const SortableSquareCard = ({ item }: { item: (typeof initialItems)[0] }) => {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: item.title });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -132,7 +128,7 @@ const SortableSquareCard = ({ item }: { item: typeof initialItems[0] }) => {
   };
 
   const isInternal = !!item.pageUrl;
-  const href = isInternal ? `/${item.pageUrl}` : item.url || '#';
+  const href = isInternal ? `/${item.pageUrl}` : item.url || "#";
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} className="relative">
@@ -153,21 +149,24 @@ const SortableSquareCard = ({ item }: { item: typeof initialItems[0] }) => {
   );
 };
 
-
 const HomePage = () => {
   const [items, setItems] = useState(initialItems);
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
-    })
+    }),
   );
 
-  function handleDragEnd({active, over}: DragEndEvent) {
+  function handleDragEnd({ active, over }: DragEndEvent) {
     if (over && active.id !== over.id) {
       setItems((currentItems) => {
-        const oldIndex = currentItems.findIndex(item => item.title === active.id);
-        const newIndex = currentItems.findIndex(item => item.title === over.id);
+        const oldIndex = currentItems.findIndex(
+          (item) => item.title === active.id,
+        );
+        const newIndex = currentItems.findIndex(
+          (item) => item.title === over.id,
+        );
         return arrayMove(currentItems, oldIndex, newIndex);
       });
     }
@@ -207,7 +206,10 @@ const HomePage = () => {
           collisionDetection={closestCenter}
           onDragEnd={handleDragEnd}
         >
-          <SortableContext items={items.map(item => item.title)} strategy={rectSortingStrategy}>
+          <SortableContext
+            items={items.map((item) => item.title)}
+            strategy={rectSortingStrategy}
+          >
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {items.map((item) => (
                 <SortableSquareCard key={item.title} item={item} />
@@ -218,6 +220,6 @@ const HomePage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default HomePage;
