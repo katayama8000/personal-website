@@ -3,19 +3,19 @@ import Image from 'next/image';
 import {
   ExternalLink,
   User,
-  Github,
   BookOpen,
   FileText,
   StickyNote,
   X,
-  Linkedin,
 } from 'lucide-react';
+import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
+import { GithubIcon } from '@/components/icons/GithubIcon';
 
 const TITLE_INFORMATION_LIST = [
   {
     title: 'GitHub',
     url: 'https://github.com/katayama8000',
-    icon: <Github className="w-8 h-8" />,
+    icon: <GithubIcon className="w-8 h-8" />,
   },
   {
     title: 'About',
@@ -45,7 +45,7 @@ const TITLE_INFORMATION_LIST = [
   {
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/%E9%81%94%E6%96%87-%E7%89%87%E5%B1%B1-243689236/',
-    icon: <Linkedin className="w-8 h-8" />,
+    icon: <LinkedinIcon className="w-8 h-8" />,
   },
   {
     title: 'Medium',
