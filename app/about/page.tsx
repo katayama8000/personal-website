@@ -72,8 +72,8 @@ const AboutPage = () => {
             <p>
               I&apos;m an engineer based in Nagoya, Japan, with{' '}
               {yearsOfWorkExperience} years of professional experience. I work
-              with various programming languages such as C, JavaScript, and
-              TypeScript, and I&apos;m currently interested in Rust.
+              with various programming languages such as C, TypeScript, Rust and
+              Scala.
             </p>
           </section>
 
