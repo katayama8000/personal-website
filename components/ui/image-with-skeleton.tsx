@@ -49,7 +49,7 @@ export const ImageWithSkeleton: FC<Props> = ({
         className={`w-full h-full object-cover rounded-lg z-10${
           isLarge ? ' max-w-full max-h-[90vh] object-contain' : ''
         }`}
-        onLoadingComplete={handleLoaded}
+        onLoad={handleLoaded}
         onClick={onClick}
         priority={isLarge}
       />
