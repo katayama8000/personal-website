@@ -65,7 +65,7 @@ const initialItems = [
   },
   {
     title: "LinkedIn",
-    url: "https://www.linkedin.com/in/%E9%81%94%E6%96%87-%E7%89%87%E5%B1%B1-243689236/",
+    url: "https://www.linkedin.com/in/tatsufumi-katayama-243689236/",
     icon: <LinkedinIcon className="w-8 h-8" />,
   },
   {
