@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useState } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -11,15 +11,15 @@ import {
   useSensor,
   useSensors,
   DragEndEvent,
-} from "@dnd-kit/core";
+} from '@dnd-kit/core';
 import {
   arrayMove,
   SortableContext,
   sortableKeyboardCoordinates,
   rectSortingStrategy,
   useSortable,
-} from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import {
   ExternalLink,
   User,
@@ -28,49 +28,49 @@ import {
   StickyNote,
   X,
   GripVertical,
-} from "lucide-react";
-import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
-import { GithubIcon } from "@/components/icons/GithubIcon";
+} from 'lucide-react';
+import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
+import { GithubIcon } from '@/components/icons/GithubIcon';
 
 const initialItems = [
   {
-    title: "GitHub",
-    url: "https://github.com/katayama8000",
+    title: 'GitHub',
+    url: 'https://github.com/katayama8000',
     icon: <GithubIcon className="w-8 h-8" />,
   },
   {
-    title: "About",
-    pageUrl: "about",
+    title: 'About',
+    pageUrl: 'about',
     icon: <User className="w-8 h-8" />,
   },
   {
-    title: "Zenn",
-    url: "https://zenn.dev/tattu",
+    title: 'Zenn',
+    url: 'https://zenn.dev/tattu',
     icon: <BookOpen className="w-8 h-8" />,
   },
   {
-    title: "Note",
-    url: "https://note.com/katayama8000",
+    title: 'Note',
+    url: 'https://note.com/katayama8000',
     icon: <FileText className="w-8 h-8" />,
   },
   {
-    title: "Scrapbox",
-    url: "https://scrapbox.io/katayama8000/",
+    title: 'Scrapbox',
+    url: 'https://scrapbox.io/katayama8000/',
     icon: <StickyNote className="w-8 h-8" />,
   },
   {
-    title: "X",
-    url: "https://twitter.com/katayama8000",
+    title: 'X',
+    url: 'https://twitter.com/katayama8000',
     icon: <X className="w-8 h-8" />,
   },
   {
-    title: "LinkedIn",
-    url: "https://www.linkedin.com/in/tatsufumi-katayama-243689236/",
+    title: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/tatsufumi-katayama-243689236/',
     icon: <LinkedinIcon className="w-8 h-8" />,
   },
   {
-    title: "Medium",
-    url: "https://medium.com/@tattu.0310",
+    title: 'Medium',
+    url: 'https://medium.com/@tattu.0310',
     icon: <ExternalLink className="w-8 h-8" />,
   },
 ];
@@ -87,9 +87,9 @@ const SquareCard = ({
   isInternal?: boolean;
 }) => {
   const baseClass =
-    "group aspect-square flex flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/5 shadow-2xl hover:shadow-2xl transition-all duration-300 focus:outline-none transform hover:scale-105 backdrop-blur-2xl backdrop-saturate-200";
+    'group aspect-square flex flex-col items-center justify-center rounded-2xl border border-white/20 bg-white/5 shadow-2xl hover:shadow-2xl transition-all duration-300 focus:outline-none transform hover:scale-105 backdrop-blur-2xl backdrop-saturate-200';
   const titleClass =
-    "text-lg font-semibold text-gray-900 mt-2 group-hover:underline transition-colors flex items-center gap-1";
+    'text-lg font-semibold text-gray-900 mt-2 group-hover:underline transition-colors flex items-center gap-1';
   if (isInternal) {
     return (
       <Link href={href} className={baseClass}>
@@ -103,8 +103,7 @@ const SquareCard = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={baseClass}
-      >
+        className={baseClass}>
         <div>{icon}</div>
         <div className={titleClass}>
           {title}
@@ -128,15 +127,14 @@ const SortableSquareCard = ({ item }: { item: (typeof initialItems)[0] }) => {
   };
 
   const isInternal = !!item.pageUrl;
-  const href = isInternal ? `/${item.pageUrl}` : item.url || "#";
+  const href = isInternal ? `/${item.pageUrl}` : item.url || '#';
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} className="relative">
       <div
         className="absolute top-2 right-2 p-1 cursor-grab z-10"
         {...listeners}
-        onClick={(e) => e.preventDefault()}
-      >
+        onClick={(e) => e.preventDefault()}>
         <GripVertical className="w-5 h-5 text-gray-400" />
       </div>
       <SquareCard
@@ -202,14 +200,13 @@ const HomePage = () => {
         </header>
         {/* Navigation Links as Square Cards */}
         <DndContext
+          id="home-links-dnd"
           sensors={sensors}
           collisionDetection={closestCenter}
-          onDragEnd={handleDragEnd}
-        >
+          onDragEnd={handleDragEnd}>
           <SortableContext
             items={items.map((item) => item.title)}
-            strategy={rectSortingStrategy}
-          >
+            strategy={rectSortingStrategy}>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {items.map((item) => (
                 <SortableSquareCard key={item.title} item={item} />
